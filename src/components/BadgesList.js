@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './styles/BadgesList.css';
+import twitterIcon from '../images/twitter-3.svg'
 
 class BadgesListItem extends React.Component {
   render() {
@@ -12,12 +13,19 @@ class BadgesListItem extends React.Component {
           alt={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
         />
 
-        <div>
-          <strong>
+        <div className="BadgesListItem__details">
+          <h5>
             {this.props.badge.firstName} {this.props.badge.lastName}
-          </strong>
-          <br />@{this.props.badge.twitter}
-          <br />
+          </h5>
+    
+          <p className="item-twitter">
+          <img
+          src={twitterIcon}
+          alt="twitter"
+          className="item-twitter__icon" 
+          />
+              @{this.props.badge.twitter}
+          </p>
           {this.props.badge.jobTitle}
         </div>
       </div>

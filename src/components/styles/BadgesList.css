@@ -17,3 +17,28 @@
   width: 80px;
   height: 80px;
 }
+
+.BadgesListItem__details{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+
+}
+
+.item-twitter__icon{
+  width: 30px;
+  height: 30px;
+  margin: 10px 5px 5px 0px;
+}
+
+.item-twitter{
+  color: rgb(50, 50, 231);
+}
+
+p{
+  margin: 0px;
+}
+
+h5{
+  margin: 0px;
+}
