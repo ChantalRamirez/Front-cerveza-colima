@@ -3,9 +3,7 @@
   min-height: calc(100vh - 60px);
   background: url('../../images/stars.svg'), black;
   background-repeat: repeat;
-
   color: #ffffff;
-
   display: flex;
   align-items: center;
 }
