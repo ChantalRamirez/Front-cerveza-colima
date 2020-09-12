@@ -21,19 +21,26 @@ const AltaProducto = () => {
 
     }
 
-    const sendForm =  e =>{
+    const sendForm = async (e) =>{
         e.preventDefault();
+
+        // const prod = {name,description,price,image}
+        console.log('prod: ',producto)
         
-        // fetch('https://cerveceria-app.herokuapp.com/products/create', {
-        //     method: 'POST',
-        //     headers: {
-        //       Accept: 'application/json',
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(producto),
-        //   })
-        //     .then((res) => res.json())
-        //     .then((data) => console.log(data));
+        fetch('https://cerveceria-app.herokuapp.com/products/create', {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(producto),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data)).catch(error => console.log(error));
+
+        //const resultado = await axios.post('https://cerveceria-app.herokuapp.com/products/create',{producto})
+
+        //console.log('resultado: ',resultado)
 
 
     }
