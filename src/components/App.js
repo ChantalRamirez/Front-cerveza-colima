@@ -9,6 +9,7 @@ import MiComponente404 from '../pages/NotFound';
 import ProductosProvider from "../context/ProductosContext";
 
 import CatalogoProductos from '../pages/CatalogoProductos';
+import AltaProducto from '../pages/AltaProducto';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Layout>
         <Switch> 
          {/* <Route exact path="/" component={Home} />  */}
-         <Route exact path="/" component={CatalogoProductos}/>
+         <Route exact path="/" component={AltaProducto} />  
+         <Route exact path="/catalogo" component={CatalogoProductos}/>
          <Route exact path="/badges" component={Badges} />
          <Route exact path="/badges/new" component={BadgeNew} />
          <Route exact path="/404" component={MiComponente404} />
