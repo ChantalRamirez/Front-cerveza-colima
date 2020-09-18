@@ -9,17 +9,23 @@ import MiComponente404 from '../pages/NotFound';
 import ProductosProvider from "../context/ProductosContext";
 
 import CatalogoProductos from '../pages/CatalogoProductos';
-import AltaProducto from '../pages/AltaProducto';
+import AltaProducto from '../pages/productos/AltaProducto';
+import EditaProducto from '../pages/productos/EdicionProducto'
+import ListaProductos from '../pages/productos/ListaProductos'
+import TablePage from '../pages/productos/TablePage'
 
 function App() {
   return (
 
-    <BrowserRouter> 
+    <BrowserRouter>  
       <ProductosProvider>
         <Layout>
         <Switch> 
          {/* <Route exact path="/" component={Home} />  */}
-         <Route exact path="/" component={AltaProducto} />  
+         <Route exact path="/productos/new" component={AltaProducto} />  
+         <Route exact path="/productos/table" component={TablePage} /> 
+         <Route path="/productos/edit/:id" component={EditaProducto} />  
+         <Route exact path="/productos/list" component={ListaProductos} />  
          <Route exact path="/catalogo" component={CatalogoProductos}/>
          <Route exact path="/badges" component={Badges} />
          <Route exact path="/badges/new" component={BadgeNew} />
