@@ -12,7 +12,6 @@ import CatalogoProductos from '../pages/CatalogoProductos';
 import AltaProducto from '../pages/productos/AltaProducto';
 import EditaProducto from '../pages/productos/EdicionProducto'
 import ListaProductos from '../pages/productos/ListaProductos'
-import TablePage from '../pages/productos/TablePage'
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
         <Switch> 
          {/* <Route exact path="/" component={Home} />  */}
          <Route exact path="/productos/new" component={AltaProducto} />  
-         <Route exact path="/productos/table" component={TablePage} /> 
          <Route path="/productos/edit/:id" component={EditaProducto} />  
          <Route exact path="/productos/list" component={ListaProductos} />  
          <Route exact path="/catalogo" component={CatalogoProductos}/>

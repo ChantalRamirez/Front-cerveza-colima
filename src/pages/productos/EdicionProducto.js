@@ -50,7 +50,7 @@ const EdicionProducto = (props)=>{
         // const prod = {name,description,price,image}
         console.log('sendForm: ',producto)
         
-        fetch('https://cerveceria-app.herokuapp.com/products/update', {
+        fetch(`https://cerveceria-app.herokuapp.com/products/update/${id}`, {
             method: "POST",
             headers: {
               Accept: "application/json",
