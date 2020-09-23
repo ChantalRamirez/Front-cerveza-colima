@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './styles/Badges.css';
-import confLogo from '../images/badge-header.svg';
+import './styles/Products.css';
+import confLogo from '../images/cerveza.svg';
 import BadgesList from '../components/BadgesList';
 
 class Badges extends React.Component {
@@ -79,13 +79,14 @@ class Badges extends React.Component {
       <React.Fragment>
         <div className="Badges">
         <div className="Badges__hero">
-            <div className="Badges__container">
+            {/* <div className="Badges__container">
                <img
                  className="Badges_conf-logo"
                  src={confLogo}
                 alt="Conf Logo"
-                />
-             </div>
+                /> 
+                 <span className="">Cerveza Colima</span>
+             </div> */}
            </div>
         </div>
 

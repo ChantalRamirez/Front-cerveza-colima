@@ -1,5 +1,5 @@
 import React from 'react';
-import Image_NotFound from '../images/404Error2.svg'
+import Image_NotFound from '../images/error_robot.png'
 import './styles/Home.css';
 
 function NotFound() {
@@ -12,7 +12,7 @@ function NotFound() {
               <img
                 src={Image_NotFound}
                 alt="Page_NotFound"
-                className="img-fluid p-4"
+                className="img-fluid p-6"
               />
             </div>
           </div>

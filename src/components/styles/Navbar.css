@@ -2,15 +2,49 @@
   width: 100%;
   padding: 0.5rem 0;
   background-color: black;
+  display: flex;
+  align-content: center;
+  
 }
+.menu{
+  margin: 0px;
+  display: flex;
+}
+
 
 .Navbar__brand {
   color: #ffffff;
-
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
+
+
+#nav{
+  margin: 0px;
+}
+.menu ol{
+  display: flex;
+  margin: 0;
+}
+.menu ol li{
+  display: flex;
+  padding-right: 50px;
+}
+
+.menu a{
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  
+}
+
+.menu a:hover{
+  color: #c4b211;
+}
 .Navbar__brand:hover {
   color: #ffffff;
   text-decoration: none;
