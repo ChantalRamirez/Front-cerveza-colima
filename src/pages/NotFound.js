@@ -1,13 +1,14 @@
 import React from 'react';
+import Layout from '../components/Layout';
 import Image_NotFound from '../images/error_robot.png'
 import './styles/Home.css';
 
 function NotFound() {
   return (
-    <div className='Home'>
+    <Layout>
+      <div className='Home'>
         <div className="container">
-          <div className="row">
-          
+          <div className="row"> 
             <div className="Home__col d-none d-md-block col-md-8">
               <img
                 src={Image_NotFound}
@@ -18,7 +19,7 @@ function NotFound() {
           </div>
         </div>
       </div>
-
+    </Layout>
   );
 }
 
