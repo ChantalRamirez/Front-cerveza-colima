@@ -27,9 +27,11 @@ class ProductNew extends React.Component {
     return (
       <Layout>
         <React.Fragment>
-          <div className="BadgeNew__hero">
-            <img className="img-fluid" src={header} alt="Logo" />
+         <div className="BadgeNew__hero">
+          <div className="Badges__container">
+            <h3>New product</h3>
           </div>
+        </div>
           <div className="container">
             <div className="row">
              <div className="col-6">

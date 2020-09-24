@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles/Products.css';
 import confLogo from '../images/cerveza.svg';
 import ProductsList from '../components/ProductsList';
+import Layout from '../components/Layout';
 
 class Products extends React.Component {
   state = {
@@ -42,32 +43,34 @@ class Products extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="Badges">
-          <div className="Badges__hero">
-            <div className="Badges__container">
-              <img
-                className="Badges_conf-logo"
-                src={confLogo}
-                alt="Conf Logo"
-              /> 
-              <span className="">Cerveza Colima</span>
-            </div> 
-          </div>
-        </div>
-        <div className="Badges__container">
-          <div className="Badges__buttons">
-            <Link to="/product/new" className="btn btn-primary">
-               New Product
-            </Link>
-          </div>
-          <div className="Badges_list">
-            <div className="Badges_container">
-              <ProductsList products= {this.state.data} />
+      <Layout>
+        <React.Fragment>
+          <div className="Badges">
+            <div className="Badges__hero">
+              <div className="Badges__container">
+                {/* <img
+                  className="Badges_conf-logo"
+                  src={confLogo}
+                  alt="Conf Logo"
+                />  */}
+                <h3>Lista de productos</h3>
+              </div> 
             </div>
-          </div>  
-        </div>
-      </React.Fragment>
+          </div>
+          <div className="Badges__container">
+            <div className="Badges__buttons">
+              <Link to="/product/new" className="btn btn-primary">
+                New Product
+              </Link>
+            </div>
+            <div className="Badges_list">
+              <div className="Badges_container">
+                <ProductsList products= {this.state.data} />
+              </div>
+            </div>  
+          </div>
+        </React.Fragment>
+      </Layout>
     );
   }
 }

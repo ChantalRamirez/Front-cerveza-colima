@@ -26,7 +26,7 @@ class Navbar extends React.Component {
                 </li>
               </ol>
               <Link className="btn btn-primary" to="/login">
-                Sing In
+                Log In
               </Link>
             </nav>           
           </Link>
