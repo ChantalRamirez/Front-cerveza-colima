@@ -19,18 +19,7 @@ const ProductosProvider = (props) => {
       };
       obtenerProductos();
     }  
-    // else{
-    //   console.log('ID-else: ',id)
-    //   const getProductoById = async (id) => {
-    //     const url = "https://cerveceria-app.herokuapp.com/products/:id";
-    //     const resultado = await axios.get(url);
-    //     console.log(resultado.data)
-    //     //setProducto(resultado.data)
-    //   };
-    //   getProductoById(id)
-      
-    // }
-
+ 
   }, []);
 
   // console.log('hola ',productos)
