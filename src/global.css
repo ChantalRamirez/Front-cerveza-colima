@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:200,400,700');
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
 
@@ -30,25 +30,25 @@ a.link-unstyled:hover {
 }
 
 .btn.btn-primary {
-  color: #fff;
-  background-color: #7DCD40;
-  border-color: #7DCD40;
+  color: black;
+  background-color: rgb(219, 168, 27);
+  border-color: rgb(219, 168, 27);
 }
 
 .btn.btn-primary:not(:disabled):not(.disabled):hover {
   color: #fff;
-  background-color: #7DCD40;
-  border-color: #7DCD40;
+  background-color: rgb(219, 168, 27);
+  border-color: rgb(219, 168, 27);
 }
 
 .btn.btn-primary:not(:disabled):not(.disabled):active {
   color: #fff;
-  background-color: #7DCD40;
-  border-color: #7DCD40;
+  background-color:rgb(219, 168, 27);
+  border-color:rgb(219, 168, 27);
 }
 
 .btn.btn-primary:not(:disabled):not(.disabled):focus {
-  box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
+  box-shadow: 0 0 0 0.2rem rgb(175, 131, 10);
 }
 
 .btn.btn-danger {

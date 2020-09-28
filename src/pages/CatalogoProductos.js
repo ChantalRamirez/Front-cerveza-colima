@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import Producto from "../pages/Producto";
-import Image_NotFound from "../images/404Error2.svg";
+// import Image_NotFound from "../images/404Error2.svg";
 import "./styles/Home.css";
 
-import "./styles/Badges.css";
 import { ProductosContext } from "../context/ProductosContext";
 
 const CatalogoProductos = () => {

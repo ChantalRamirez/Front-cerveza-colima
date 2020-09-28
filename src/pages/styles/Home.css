@@ -1,14 +1,31 @@
 .Home {
   width: 100%;
-  min-height: calc(100vh - 60px);
-  background: url('../../images/stars.svg'), black;
+  min-height: calc(100vh - 60px); 
+  background: url('../../images/retro.jpg'), rgb(29, 28, 28);
   background-repeat: repeat;
   color: #ffffff;
   display: flex;
   align-items: center;
 }
 
+.button_start{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.button__start{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .Home__col {
   display: flex;
@@ -17,7 +34,7 @@
   align-items: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .Home__col {
     align-items: flex-start;
   }
