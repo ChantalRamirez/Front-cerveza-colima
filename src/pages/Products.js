@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Products.css';
-import confLogo from '../images/cerveza.svg';
 import ProductsList from '../components/ProductsList';
 import Layout from '../components/Layout';
 
@@ -45,15 +44,12 @@ class Products extends React.Component {
     return (
       <Layout>
         <React.Fragment>
+          <div className="Container">
+
           <div className="Badges">
             <div className="Badges__hero">
               <div className="Badges__container">
-                {/* <img
-                  className="Badges_conf-logo"
-                  src={confLogo}
-                  alt="Conf Logo"
-                />  */}
-                <h3>Lista de productos</h3>
+                <h3>Nuestros productos</h3>
               </div> 
             </div>
           </div>
@@ -68,6 +64,7 @@ class Products extends React.Component {
                 <ProductsList products= {this.state.data} />
               </div>
             </div>  
+          </div>
           </div>
         </React.Fragment>
       </Layout>

@@ -1,9 +1,18 @@
+.Container{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: calc(98vh - 60px);  
+}
 .Badges__hero {
   width: 100%;
   padding: 2rem 0;
   background: url('../../images/retro.jpg'), #1B1B25;
   background-repeat: repeat;
   margin-bottom: 1rem;
+}
+h3{
+  color: white;
 }
 
 .Badges__hero>.Badges__container {
@@ -15,6 +24,7 @@
 .Badges__container {
   width: 100%;
   max-width: 580px;
+  height: auto;
   margin: 0 auto;
   padding: 0 1rem;
 }

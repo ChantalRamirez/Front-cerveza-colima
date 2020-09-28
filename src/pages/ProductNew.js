@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/ProductNew.css';
-import header from '../images/badge-header.svg';
 import Product from '../components/Product';
 import ProductForm from '../components/ProductForm';
 import Layout from '../components/Layout';

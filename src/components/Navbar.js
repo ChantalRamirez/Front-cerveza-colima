@@ -19,10 +19,13 @@ class Navbar extends React.Component {
                   <Link className="link" to="/home">Inicio</Link>
                 </li>
                 <li>
-                  <Link className="link" to="/">Nosotros</Link>
+                  <Link className="link" to="/we">Nosotros</Link>
                 </li>
                 <li>
                   <Link className="link" to="/products">Productos</Link>
+                </li>
+                <li>
+                  <Link className="link" to="/contact">Contacto</Link>
                 </li>
               </ol>
               <Link className="btn btn-primary" to="/login">
