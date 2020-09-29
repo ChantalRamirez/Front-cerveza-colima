@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import credencials from '../credentials';
 import GoogleMaps from 'simple-react-google-maps';
 
 class Maps extends Component {
@@ -6,7 +7,7 @@ class Maps extends Component {
         return (
             <div className='Container'>
                 <GoogleMaps
-                    apiKey={"AIzaSyB5D4CVFK2uo-2Xh4P1a_6IHhpQl_49pQE"}
+                    apiKey={credencials.apikey}
                     style={{ height: "400px", width: "300px"}}
                     zoom={12}
                     center={{
