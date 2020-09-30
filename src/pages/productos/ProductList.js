@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MDBDataTable,MDBBtn } from "mdbreact";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
+import Layout from "../../components/Layout";
 
 function getModalStyle() {
   const top = 50;
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ListaProductos = () => {
+const ProductList = () => {
     // Configuración del modal de material-ui
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -99,7 +100,7 @@ const ListaProductos = () => {
     rObj['description'] = producto.description;
     rObj['price'] = producto.price;
     rObj['image'] = producto.image;
-    rObj['update'] = <Link to={`/productos/edit/${producto.id}`}  className="btn-warning ">Update</Link> 
+    rObj['update'] = <Link to={`/products/edit/${producto.id}`}  className="btn-warning ">Update</Link> 
     rObj['delete'] =  <button type="button"  className="btn-danger"  onClick={() => {handleOpen(producto.id);}}
                         > Eliminar
                       </button>
@@ -127,9 +128,10 @@ const ListaProductos = () => {
   }
 
   return (
+    <Layout>
     <div className="container mt-3">
       <h1>Lista de Productos</h1>
-      <Link to="/productos/new" className="btn btn-primary mt-3">
+      <Link to="/products/add" className="btn btn-primary mt-3">
         Nuevo Producto
       </Link>
 
@@ -160,7 +162,8 @@ const ListaProductos = () => {
       </Modal>
     
     </div>
+    </Layout>
   );
 };
 
-export default ListaProductos;
+export default ProductList;

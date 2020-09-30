@@ -65,7 +65,7 @@ const EdicionProducto = (props)=>{
   return (
     <div className="container">
       <h1 className="mt-3">Edición de Productos</h1>
-      <Link to="/productos/list" className="btn btn-primary mt-3">
+      <Link to="/products/list" className="btn btn-primary mt-3">
           Regresar
         </Link>
 

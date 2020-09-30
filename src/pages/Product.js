@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Producto = ({ producto }) => {
-  // Configuración del modal de material-ui
+const Product = ({ producto }) => {
+  // Configuring modal window
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
-
+  
   const classes = useStyles();
 
   const handleOpen = () => {
@@ -77,4 +77,4 @@ const Producto = ({ producto }) => {
   );
 };
 
-export default Producto;
+export default Product;

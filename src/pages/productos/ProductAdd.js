@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const AltaProducto = () => {
@@ -44,7 +43,7 @@ const AltaProducto = () => {
   return (
     <div className="container">
       <h1 className="mt-3">Alta de Productos</h1>
-        <Link to="/productos/list" className="btn btn-primary mt-3">
+        <Link to="/products/list" className="btn btn-primary mt-3">
           Regresar
         </Link>
 
