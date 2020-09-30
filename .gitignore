@@ -11,8 +11,8 @@
 # production
 /build
 
+/src/credencials
 /credencials
-
 
 # misc
 .DS_Store
