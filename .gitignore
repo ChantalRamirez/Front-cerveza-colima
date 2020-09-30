@@ -5,14 +5,15 @@
 /.pnp
 .pnp.js
 
+/src/credencials.js
+/credencials.js
 # testing
 /coverage
 
 # production
 /build
 
-/src/credencials
-/credencials
+
 
 # misc
 .DS_Store
