@@ -5,8 +5,10 @@
 /.pnp
 .pnp.js
 
-/src/credencials.js
+/src/credencials
 /credencials.js
+/credencials
+
 # testing
 /coverage
 
