@@ -1,8 +1,8 @@
 .Container{
     margin: 0;
     padding: 0;
-    width: auto;
-    min-height: calc(98vh - 60px); 
+    width: 100%;
+    /* min-height: calc(98vh - 60px);   */
   }
   .Product__hero {
     width: 100%;
@@ -11,12 +11,17 @@
     background-repeat: repeat;
     margin-bottom: 1rem;
   }
-  h3{
-    color: white;
+  h2{
+    color: black;
+    text-align: center;
+    margin-bottom: 50px;
   }
 
-  span{
-    text-align: center;
+
+  .Button__container{
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
   }
   
   .Product__hero>.Product__container {
@@ -27,10 +32,22 @@
   
   .Product__container {
     width: 100%;
-    max-width: 50%;
+    max-width: 580px;
     height: auto;
     margin: 0 auto;
-    padding: 20px 1rem;
+    padding: 20px 1rem; 
+  }
+
+  .Form__container{
+      /* background-color: lightgrey; */
+      width: 100%;
+      max-width: 580px;
+      height: auto;
+      margin: 0 auto;
+      padding: 20px 1rem;
+      /* display: flex; */
+      /* align-items: center; */
+      justify-content: center;
   }
   
   .Product_conf-logo {

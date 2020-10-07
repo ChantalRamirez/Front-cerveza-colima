@@ -12,33 +12,37 @@ export default class Home extends Component {
   render() {
     return (
       <Layout>
-        <Carousel>
-          <Carousel.Item interval={1000}>
-            <img
-              className="d-block w-100"
-              src={image1}
-              alt="Sucursal"
-            />
-          </Carousel.Item>
-          <Carousel.Item interval={500}>
-            <Link to="/we">
-            <img
-              className="d-block w-100"
-              src={image2}
-              alt="Nuestro equipo"
-            />
-            </Link>
-          </Carousel.Item>
-          <Carousel.Item>
-            <Link to="/products">
-              <img
-                className="d-block w-100"
-                src={image3}
-                alt="Productos"
-              />
-            </Link>
-          </Carousel.Item>
-        </Carousel>
+        <React.Fragment>
+          <div className="Container">
+            <Carousel>
+              <Carousel.Item interval={1000}>
+                <img
+                  className="d-block w-100"
+                  src={image1}
+                  alt="Sucursal"
+                />
+              </Carousel.Item>
+              <Carousel.Item interval={500}>
+                <Link to="/we">
+                <img
+                  className="d-block w-100"
+                  src={image2}
+                  alt="Nuestro equipo"
+                />
+                </Link>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Link to="/products">
+                  <img
+                    className="d-block w-100"
+                    src={image3}
+                    alt="Productos"
+                  />
+                </Link>
+              </Carousel.Item>
+            </Carousel>
+          </div>
+        </React.Fragment>
       </Layout>
     );
   }

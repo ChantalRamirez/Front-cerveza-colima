@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import credentials from '../credentials/credentials';
 import GoogleMaps from 'simple-react-google-maps';
+import './styles/Product.css';
 
 class Maps extends Component {
     render(){
         return (
-            <div className='Container'>
+        
                 <GoogleMaps
                     apiKey={credentials.apikey}
-                    style={{ height: "400px", width: "300px"}}
+                    style={{ height: "300px", width: "auto"}}
                     zoom={12}
                     center={{
                         lat: 40.4127355,
@@ -16,7 +17,6 @@ class Maps extends Component {
                     }}
                     markers={{ lat: 40.409711, lng: -3.692569}}
                 />
-            </div>
         );
     }
 }

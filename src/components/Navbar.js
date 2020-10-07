@@ -29,7 +29,7 @@ class Navbar extends React.Component {
                 </li>
               </ol>
               <Link className="btn btn-primary" to="/login">
-                Log In
+                Iniciar Sesión
               </Link>
             </nav>           
           </Link>
