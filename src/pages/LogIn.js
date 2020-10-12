@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Axios from "axios";
 
-const Login = () => {
+const Login = (props) => {
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -27,7 +27,13 @@ const Login = () => {
         },
         withCredentials: true,
         url: "https://cerveceria-app.herokuapp.com/auth/login"
-      }).then((res) => console.log(res.user))
+      }).then((res) =>{
+        console.log('res.data.accessToken: ',res.data.token)
+        if(res.data.token){
+          localStorage.setItem("user", JSON.stringify(res.data));
+        }
+      })
+      props.history.push("/products/list");
     };
 
   return (

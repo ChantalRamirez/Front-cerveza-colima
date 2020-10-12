@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 
 const AltaProducto = () => {
   const [producto, setProducto] = useState({
@@ -21,21 +22,29 @@ const AltaProducto = () => {
 
   const sendForm = async (e) => {
     e.preventDefault();
+    let tok = JSON.parse(localStorage.getItem("user"));
+    console.log("El token recuperado es:", tok.token);
+    let toki = tok.token;
 
-    // const prod = {name,description,price,image}
     console.log("prod: ", producto);
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${toki}`,
+    };
 
-    fetch("https://cerveceria-app.herokuapp.com/products/create", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(producto),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
+    Axios.post(
+      "https://cerveceria-app.herokuapp.com/products/create",
+      producto,
+      {
+        headers: headers,
+      }
+    )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     setProducto({ name: "", description: "", price: "", image: "" });
   };
@@ -43,9 +52,9 @@ const AltaProducto = () => {
   return (
     <div className="container">
       <h1 className="mt-3">Alta de Productos</h1>
-        <Link to="/products/list" className="btn btn-primary mt-3">
-          Regresar
-        </Link>
+      <Link to="/products/list" className="btn btn-primary mt-3">
+        Regresar
+      </Link>
 
       <form onSubmit={sendForm}>
         <fieldset className="text-center">
