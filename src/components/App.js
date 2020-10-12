@@ -18,6 +18,9 @@ import UsersList from "../pages/users/UsersList";
 import UserAdd from "../pages/users/UserAdd";
 import UserEdit from "../pages/users/UserEdit";
 
+//Login
+import Login from "../pages/Login"
+
 function App() {
   return (
     
@@ -33,6 +36,7 @@ function App() {
             <Route exact path="/users/list" component={UsersList} />
             <Route exact path="/users/add" component={UserAdd} />
             <Route exact path="/users/edit/:id" component={UserEdit} />
+            <Route exact path="/login" component={Login} />
             <Route exact path="/404" component={MiComponente404} />
             <Redirect from="*" to="/404" />
           </Switch>
