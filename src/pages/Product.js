@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Product = ({ producto }) => {
+const Product = ({ product }) => {
   // Configuring modal window
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
@@ -38,7 +38,7 @@ const Product = ({ producto }) => {
   return (
     <div className="col-md-4 mb-3 mt-3">
       <div className="card">
-        <h2 className="card-header">{producto.name}</h2>
+        <h2 className="card-header">{product.name}</h2>
 
         <img className="card-img-top" />
 
@@ -63,11 +63,11 @@ const Product = ({ producto }) => {
         }}
       >
         <div style={modalStyle} className={classes.paper}>
-          <h3 className="mt-4">{producto.name}</h3>
+          <h3 className="mt-4">{product.name}</h3>
           {/* <img className="img-fluid my-4" src={informacion.strDrinkThumb} /> */}
           <p>la imagen va aquí</p>
-          <p>Descripción: {producto.description}</p>
-          <p>Precio: ${producto.price}</p>
+          <p>Descripción: {product.description}</p>
+          <p>Precio: ${product.price}</p>
 
           <ul>{/* { mostrarIngredientes(informacion) } */}</ul>
         </div>

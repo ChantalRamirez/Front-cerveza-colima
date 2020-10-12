@@ -17,9 +17,9 @@ const Login = (props) => {
       setPassword(pass);
     };
 
-    const login = (e) => {
+    const login = async (e) => {
       e.preventDefault();
-      Axios({
+      await Axios({
         method: "POST",
         data: {
           email: email,
@@ -28,7 +28,6 @@ const Login = (props) => {
         withCredentials: true,
         url: "https://cerveceria-app.herokuapp.com/auth/login"
       }).then((res) =>{
-        console.log('res.data.accessToken: ',res.data.token)
         if(res.data.token){
           localStorage.setItem("user", JSON.stringify(res.data));
         }

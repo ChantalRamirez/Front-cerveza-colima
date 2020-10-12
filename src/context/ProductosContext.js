@@ -10,15 +10,15 @@ const ProductosProvider = (props) => {
 
   useEffect(() => {
     //agregar if para validar ejecución de "obtenerProductos" cuando es para catálogo o para listado
-    console.log('entra a useeffect del context')
-    if(consultar){
+    console.log('entra a useeffect del context',consultar)
+    // if(consultar){
       const obtenerProductos = async () => {
         const url = "https://cerveceria-app.herokuapp.com/getProducts";
         const resultado = await axios.get(url);
         setProductos(resultado.data.products);
       };
       obtenerProductos();
-    }  
+    // }  
  
   }, []);
 

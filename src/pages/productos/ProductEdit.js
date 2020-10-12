@@ -9,6 +9,10 @@ const EdicionProducto = (props)=>{
 
     let {id} = match.params;
 
+    const [usr,setUsr] = useState(JSON.parse(localStorage.getItem("user")))
+    const [token,setToken] = useState(usr.token)
+
+
 
   //guardar cambios
   //implementar borrado de producto
@@ -33,10 +37,23 @@ const EdicionProducto = (props)=>{
  
 
     useEffect(()=>{
+
+      const token = usr.token; 
+
       const getProductoById = async () => {
-        const resultado = await Axios.get(`https://cerveceria-app.herokuapp.com/products/${id}`)
-        console.log('getProductoById: ',resultado.data.product)
-        setProducto(resultado.data.product)
+    
+        console.log("prod: ", producto);
+        const headers = {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        };
+
+        const result = await Axios.get(`https://cerveceria-app.herokuapp.com/products/${id}`,
+        {
+          headers: headers
+        })
+        console.log('getProductoById: ',result.data.product)
+        setProducto(result.data.product)
       }
   
       getProductoById();
@@ -47,19 +64,23 @@ const EdicionProducto = (props)=>{
     const sendForm = async (e) =>{
         e.preventDefault();
 
-        // const prod = {name,description,price,image}
-        console.log('sendForm: ',producto)
-        
-        fetch(`https://cerveceria-app.herokuapp.com/products/update/${id}`, {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(producto),
-          })
-            .then((res) => res.json())
-            .then((data) => console.log(data)).catch(error => console.log(error));
+        const headers = {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        };
+
+        const res = Axios.post(`https://cerveceria-app.herokuapp.com/products/update/${id}`,producto,
+        {
+          headers:headers
+        }).then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+        props.history.push("/products/list");
+ 
     }
 
   return (

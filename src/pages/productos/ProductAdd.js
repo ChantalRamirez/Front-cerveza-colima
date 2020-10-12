@@ -2,7 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
-const AltaProducto = () => {
+const AltaProducto = (props) => {
+
+
+  const usr = JSON.parse(localStorage.getItem("user"))
+
+  if(!usr){
+    props.history.push("/login");
+  }
+
+  const token = (usr ? usr.token : '')
+
   const [producto, setProducto] = useState({
     name: "",
     description: "",
@@ -47,6 +57,8 @@ const AltaProducto = () => {
       });
 
     setProducto({ name: "", description: "", price: "", image: "" });
+
+    props.history.push("/products/list");
   };
 
   return (
