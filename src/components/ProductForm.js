@@ -14,10 +14,10 @@ class ProductForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>New Attendant</h1>
+        <h1>Crea tu propia cerveza</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label>First Name</label>  
+            <label>Nombre</label>  
             <input
               onChange={this.props.onChange}
               className="form-control"
@@ -27,7 +27,7 @@ class ProductForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label>Last Name</label>
+            <label>Descripción</label>
             <input
               onChange={this.props.onChange}
               className="form-control"
@@ -37,7 +37,7 @@ class ProductForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label>Email</label>
+            <label>Lugar</label>
               <input
                 onChange={this.props.onChange}
                 className="form-control"
@@ -47,7 +47,7 @@ class ProductForm extends React.Component {
               />
           </div>
           <div className="form-group">
-            <label>Job Title</label>
+            <label>Cliente</label>
             <input
               onChange={this.props.onChange}
               className="form-control"
@@ -57,7 +57,7 @@ class ProductForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label>Twitter</label>
+            <label>Fecha de creación</label>
               <input
                 onChange={this.props.onChange}
                 className="form-control"
@@ -67,7 +67,7 @@ class ProductForm extends React.Component {
               />
           </div>
           <button onClick={this.handleClick} className="btn btn-primary">
-            Save
+            Crear
           </button>
         </form> 
       </div>

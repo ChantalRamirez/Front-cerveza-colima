@@ -7,7 +7,7 @@ import ProductNew from '../pages/ProductNew';
 import MiComponente404 from '../pages/NotFound';
 import We from '../pages/We';
 import Contact from '../pages/Contact';
-import LogIn from '../pages/LogIn';
+import Login from '../pages/Login';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/products" component={Products} />
         <Route exact path="/product/new" component={ProductNew} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/login" component={LogIn} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/404" component={MiComponente404} />
         <Redirect from="*" to="/404" />
       </Switch> 

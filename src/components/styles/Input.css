@@ -1,0 +1,31 @@
+.RegularStyle{
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .Input__error{
+    border: 1px solid red;
+    color: red;
+    background: rgb(224,204, 204);
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .Input__error::placeholder{
+    color: red;
+    font-size: 16px;
+  }
+
+  @media (max-width: 400px){
+    .RegularStyle{
+      width: 95%;
+    }
+  }

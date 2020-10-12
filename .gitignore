@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 
+#credentials
 /src/credentials
 /credentials
 
@@ -13,8 +14,6 @@
 
 # production
 /build
-
-
 
 # misc
 .DS_Store

@@ -5,16 +5,6 @@
   min-height: calc(98vh - 60px);  
 }
 
-.Home {
-  width: auto;
-  min-height: calc(100vh - 60px);  
-  background: url('../../images/retro.jpg'), rgb(29, 28, 28);
-  background-repeat: repeat;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-
 h3{
   color: black;
 }

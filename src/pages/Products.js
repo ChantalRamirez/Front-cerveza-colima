@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './styles/Products.css';
+import { Link } from 'react-router-dom';
 import ProductsList from '../components/ProductsList';
 import Layout from '../components/Layout';
 
@@ -45,26 +45,25 @@ class Products extends React.Component {
       <Layout>
         <React.Fragment>
           <div className="Container">
-
-          <div className="Badges">
-            <div className="Badges__hero">
-              <div className="Badges__container">
-                <h3>Nuestros productos</h3>
-              </div> 
-            </div>
-          </div>
-          <div className="Badges__container">
-            <div className="Badges__buttons">
-              <Link to="/product/new" className="btn btn-primary">
-                New Product
-              </Link>
-            </div>
-            <div className="Badges_list">
-              <div className="Badges_container">
-                <ProductsList products= {this.state.data} />
+            <div className="Products">
+              <div className="Products__hero">
+                <div className="Products__container">
+                  <h3>Catálogo de productos</h3>
+                </div> 
               </div>
-            </div>  
-          </div>
+            </div>
+            <div className="Products__container">
+              <div className="Products__buttons">
+                <Link to="/product/new" className="btn btn-primary">
+                  Nuevo Producto
+                </Link>
+              </div>
+              <div>
+                <div className="Products_container">
+                  <ProductsList products= {this.state.data} />
+                </div>
+              </div>  
+            </div>
           </div>
         </React.Fragment>
       </Layout>

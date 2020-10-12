@@ -19,13 +19,14 @@ class Contact extends React.Component {
             </div>
             <div className="Product__container">
               <Maps/>     
-              <p>
+              <div className="Information__container">
                 Primaveras #85<br/><br/>
                 Las Primaveras, Villa de Álvarez, Colima<br/><br/>
                 C.P. 28998<br/><br/>
                 info.contact@gmail.com<br/><br/>
-                <strong>044 312 30 1122</strong>
-              </p>
+                <strong> Teléfono: 044 312 30 1122</strong>
+              </div>
+              <h5>Envíanos un mensaje</h5>
               <Form>
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Correo</Form.Label>

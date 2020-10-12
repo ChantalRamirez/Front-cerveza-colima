@@ -25,7 +25,7 @@ class Product extends React.Component {
           <div>@{this.props.twitter} 
           </div>
         </div>
-        <div className="Badge__footer">#platziconf</div>
+        <div className="Badge__footer">#CervezaColima</div>
       </div>
     );
   }

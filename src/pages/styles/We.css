@@ -1,55 +1,39 @@
 .Container{
-    margin: 0;
-    padding: 0;
-    width: auto;
-    min-height: calc(98vh - 60px);  
-  }
-  .Badges__hero {
-    width: 100%;
-    padding: 2rem 0;
-    background: url('../../images/retro.jpg'), #1B1B25;
-    background-repeat: repeat;
-    margin-bottom: 1rem;
-  }
-  h3{
-    color: white;
-  }
-
-  
-  .Badges__hero>.Badges__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  p{
-    padding-top: 50px;
-    padding-bottom: 100px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: justify;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  min-height: calc(98vh - 60px);  
 }
 
-  .Badges__container {
-    width: 100%;
-    max-width: 50%;
-    height: auto;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .Badges_conf-logo {
-    height: 50px;
-    margin-bottom: 2rem;
-  }
+.Products__hero {
+  width: 100%;
+  padding: 2rem 0;
+  background: url('../../images/retro.jpg'), #1B1B25;
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+}
 
-  .We__image{
-      height: 100%;
-      width: 100%;
+h3{
+  color: white;
+}
 
-  }
+.Text__container{
+  padding-top: 50px;
+  padding-bottom: 100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: justify;
+}
+
+.Products__container {
+  width: 100%;
+  max-width: 50%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
   
-  .Badges__buttons {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-  }
+.We__image{
+  height: 100%;
+  width: 100%;
+}

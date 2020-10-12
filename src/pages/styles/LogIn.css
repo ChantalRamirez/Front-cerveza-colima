@@ -2,8 +2,11 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    /* min-height: calc(98vh - 60px);   */
+    min-height: calc(98vh - 60px); 
+    min-width: 100%;
+  
   }
+
   .Product__hero {
     width: 100%;
     padding: 2rem 0;
@@ -11,23 +14,27 @@
     background-repeat: repeat;
     margin-bottom: 1rem;
   }
-  h2{
+
+  .Text__center{
     color: black;
     text-align: center;
     margin-bottom: 50px;
   }
 
-
   .Button__container{
+      align-items: center;
+      margin-top: 20px;
+      width: 300px;
       display: flex;
       justify-content: center;
-      margin-top: 50px;
+      border-radius: 10px;
   }
   
   .Product__hero>.Product__container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   
   .Product__container {
@@ -38,25 +45,58 @@
     padding: 20px 1rem; 
   }
 
+  .Login__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #E1E1E1;  */
+    border-radius: 5px;
+  }
+
   .Form__container{
       /* background-color: lightgrey; */
-      width: 100%;
-      max-width: 580px;
-      height: auto;
+      width: 450px;
+      height: 400px;
       margin: 0 auto;
-      padding: 20px 1rem;
-      /* display: flex; */
-      /* align-items: center; */
-      justify-content: center;
+      padding: 20px 1rem; 
   }
   
-  .Product_conf-logo {
-    height: 50px;
-    margin-bottom: 2rem;
+  .Label__Error{
+    font-size: 12px;
+    color: red;
+    background: rgb(224,204, 204);
+    width: fit-content;
+    height: fit-content;
+    padding: 0 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
   }
-  
-  .Product__buttons {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-  }
+
+.Label__alert{
+  font-size: 12px;
+  color: red;
+  background: rgb(224,204, 204);
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+}
+
+
+ @media (max-width: 400px){
+    .Login__container{
+      width: 95%;
+    }
+ 
+    .Container{
+      width: 95%;
+    }
+
+    .Button__container{
+      width: 50%;
+    }
+ }

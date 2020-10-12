@@ -1,0 +1,21 @@
+.Home {
+    width: auto;
+    min-height: calc(100vh - 60px);  
+    background: url('../../images/retro.jpg'), rgb(29, 28, 28);
+    background-repeat: repeat;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.button_start{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

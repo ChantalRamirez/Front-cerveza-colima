@@ -4,24 +4,26 @@
   width: 100%;
   min-height: calc(98vh - 60px);  
 }
-.Badges__hero {
+
+.Products__hero {
   width: 100%;
   padding: 2rem 0;
   background: url('../../images/retro.jpg'), #1B1B25;
   background-repeat: repeat;
   margin-bottom: 1rem;
 }
+
 h3{
   color: white;
 }
 
-.Badges__hero>.Badges__container {
+.Products__hero>.Products__container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Badges__container {
+.Products__container {
   width: 100%;
   max-width: 580px;
   height: auto;
@@ -29,12 +31,7 @@ h3{
   padding: 0 1rem;
 }
 
-.Badges_conf-logo {
-  height: 50px;
-  margin-bottom: 2rem;
-}
-
-.Badges__buttons {
+.Products__buttons {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1rem;
