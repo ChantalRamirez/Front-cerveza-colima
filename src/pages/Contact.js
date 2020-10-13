@@ -18,6 +18,7 @@ class Contact extends React.Component {
               </div>
             </div>
             <div className="Product__container">
+              <div></div>
               <Maps/>     
               <div className="Information__container">
                 Primaveras #85<br/><br/>

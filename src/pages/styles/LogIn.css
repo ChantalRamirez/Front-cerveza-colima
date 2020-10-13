@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    /* min-height: calc(98vh - 60px);  */
+    min-height: calc(98vh - 60px);
     min-width: 100%;
   
   }
@@ -19,12 +19,14 @@
     color: black;
     text-align: center;
     margin-bottom: 50px;
+    /* margin-top: 30px; */
   }
 
   .Button__container{
       align-items: center;
       margin-top: 20px;
-      width: 300px;
+      margin-bottom: 30px;
+      width: 400px;
       display: flex;
       justify-content: center;
       border-radius: 10px;
@@ -52,6 +54,7 @@
     align-items: center;
     /* border: 1px solid #E1E1E1;  */
     border-radius: 5px;
+    
   }
 
   .Form__container{
@@ -86,6 +89,33 @@
 
 }
 
+.RegularStyle{
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.Input__error{
+  border: 1px solid red;
+  color: red;
+  background: rgb(224,204, 204);
+  width: 350px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.Input__error::placeholder{
+  color: red;
+  font-size: 16px;
+}
+
 
  @media (max-width: 400px){
     .Login__container{
@@ -98,5 +128,9 @@
 
     .Button__container{
       width: 50%;
+    }
+
+    .RegularStyle{
+      width: 95%;
     }
  }

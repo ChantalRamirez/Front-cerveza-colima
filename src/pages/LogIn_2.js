@@ -3,10 +3,13 @@ import Layout from "../components/Layout";
 import Axios from "axios";
 import './styles/Login.css';
 
+
 const Login = (props) => {
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const [ hasError, setHasError ] = useState(false);
+    const [ passwordError, setPasswordError ] = useState(false);
 
     const onChangeEmail = (e) => {
       const usr = e.target.value;
@@ -14,8 +17,8 @@ const Login = (props) => {
     };
   
     const onChangePassword = (e) => {
-      const pass = e.target.value;
-      setPassword(pass);
+        const pass = e.target.value;
+        setPassword(pass);     
     };
 
     const login = async (e) => {
@@ -38,48 +41,54 @@ const Login = (props) => {
 
   return (
     <Layout>
-      <div className="container mt-3">
-        <h1>Login</h1>
-        <form onSubmit={login}>
-        <fieldset className="text-center">
-          <legend>Inicio de sesión</legend>
-        </fieldset>
-
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            className="form-control"
-            name="email"
-            id="email"
-            placeholder="Ingresa tu email"
-             onChange={onChangeEmail}
-             value={email}
-          />
+      <div className="Container">
+        <div className="Product">
+          <div className="Product__hero"></div>
         </div>
+        <div className="Login__container">
+          <h2 className="Text__center">Inicio de sesión</h2>
+            {hasError &&
+              <label className="Label__alert"> 
+                Su contraseña o usuario son incorrectos 
+                o no existen en nuestra plataforma.
+              </label>
+            }
+            <form onSubmit={login} className="Login__container">
+                <label htmlFor="email">Email</label>
+                  <input
+                    type="text"
+                    className="RegularStyle"
+                    name="email"
+                    id="email"
+                    placeholder="Ingresa tu email"
+                    onChange={onChangeEmail}
+                    value={email}
+                  />
+                <label htmlFor="password">Contraseña</label>
+                  <input
+                    type="password"
+                    className="RegularStyle"
+                    id="password"
+                    placeholder="Ingresa tu contraseña"
+                    name="password"
+                    onChange={onChangePassword}
+                    value={password}
+                  />
+                   { passwordError && 
+                                <label className="Label__Error">
+                                    Contraseña inválida o incompleta
+                                </label>
+                            }
+                <input
+                  type="submit"
+                  className="btn btn-block btn-primary Button__container"
+                  value="Login"
+                />
 
-        <div className="form-group">
-          <label htmlFor="password">Descripción</label>
-          <input
-            type="text"
-            className="form-control"
-            id="password"
-            placeholder="Ingresa tu contraseña"
-            name="password"
-             onChange={onChangePassword}
-             value={password}
-          />
-        </div>
+            </form>
+      
+      </div>
 
-        <div className="form-group">
-          <input
-            type="submit"
-            className="btn btn-block btn-primary"
-            value="Login"
-            
-          />
-        </div>
-      </form>
       </div>
     </Layout>
   );
