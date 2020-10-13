@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: calc(98vh - 60px); 
+    /* min-height: calc(98vh - 60px);  */
     min-width: 100%;
   
   }
