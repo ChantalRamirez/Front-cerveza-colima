@@ -70,7 +70,7 @@ const ProductList = (props) => {
       })      
       .catch((error) => {
         console.log(error)
-        props.history.push("/login");
+        props.history.push("/login2");
       });
       
       

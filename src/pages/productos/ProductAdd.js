@@ -8,7 +8,7 @@ const AltaProducto = (props) => {
   const usr = JSON.parse(localStorage.getItem("user"))
 
   if(!usr){
-    props.history.push("/login");
+    props.history.push("/login2");
   }
 
   const token = (usr ? usr.token : '')

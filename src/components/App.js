@@ -19,7 +19,7 @@ import UserAdd from "../pages/users/UserAdd";
 import UserEdit from "../pages/users/UserEdit";
 
 //Login
-import Login from "../pages/Login";
+import Login_2 from "../pages/LogIn_2";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         <Route exact path="/" component={Start} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/products" component={ProductCatalog} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login2" component={Login_2} />
         <Route exact path="/products/add" component={ProductAdd} />
         <Route exact path="/products/edit/:id" component={ProductEdit} />
         <Route exact path="/products/list" component={ProductList} />
