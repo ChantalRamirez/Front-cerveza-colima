@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import Layout from "../../components/Layout";
+import './styles/ProductList.css'
 
 const AltaProducto = (props) => {
 
@@ -62,12 +64,22 @@ const AltaProducto = (props) => {
   };
 
   return (
-    <div className="container">
-      <h1 className="mt-3">Alta de Productos</h1>
-      <Link to="/products/list" className="btn btn-primary mt-3">
-        Regresar
-      </Link>
-
+    <Layout>
+      <div className="Container">
+            <div className="Products">
+              <div className="Products__hero">
+                <div className="Products__container">
+                  <h3>Alta de productos</h3>
+                </div> 
+              </div>
+            </div>
+     
+      <div className="Table__container">
+        <div className="Products__buttons">
+          <Link to="/products/list" className="btn btn-primary mt-3">
+            Regresar
+          </Link>
+        </div>
       <form onSubmit={sendForm}>
         <fieldset className="text-center">
           <legend>Registro de Productos para catálogo</legend>
@@ -134,6 +146,8 @@ const AltaProducto = (props) => {
         </div>
       </form>
     </div>
+    </div>
+   </Layout>
   );
 };
 

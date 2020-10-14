@@ -2,6 +2,8 @@ import Axios from "axios";
 import React, {useEffect, useState} from "react";
 import {useParams} from 'react-router'
 import { Link } from "react-router-dom";
+import './styles/ProductList.css'
+import Layout from "../../components/Layout";
 
 const EdicionProducto = (props)=>{
 
@@ -84,12 +86,22 @@ const EdicionProducto = (props)=>{
     }
 
   return (
-    <div className="container">
-      <h1 className="mt-3">Edición de Productos</h1>
-      <Link to="/products/list" className="btn btn-primary mt-3">
+    <Layout>
+      <div className="Container">
+            <div className="Products">
+              <div className="Products__hero">
+                <div className="Products__container">
+                  <h3>Edición de Productos</h3>
+                </div> 
+              </div>
+            </div>
+     
+      <div className="Table__container">
+        <div className="Products__buttons">
+        <Link to="/products/list" className="btn btn-primary mt-3">
           Regresar
         </Link>
-
+        </div>
       <form onSubmit={sendForm}>
       <fieldset className="text-center">
             <legend>Modificación de Productos para catálogo</legend>
@@ -128,8 +140,9 @@ const EdicionProducto = (props)=>{
 
       </form>
 
-      
+      </div>
     </div>
+  </Layout>
   );
 };
 
