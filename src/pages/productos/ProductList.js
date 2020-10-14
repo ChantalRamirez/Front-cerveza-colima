@@ -6,6 +6,7 @@ import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../../components/Layout";
 import Axios from "axios";
+import './styles/ProductList.css'
 
 function getModalStyle() {
   const top = 50;
@@ -185,13 +186,22 @@ const ProductList = (props) => {
 
   return (
     <Layout>
-      <div className="container mt-3">
-        <h1>Lista de Productos</h1>
-        <Link to="/products/add" className="btn btn-primary mt-3">
-          Nuevo Producto
-        </Link>
+      <div className="Container">
+            <div className="Products">
+              <div className="Products__hero">
+                <div className="Products__container">
+                  <h3>Gestión de productos</h3>
+                </div> 
+              </div>
+            </div>
+            <div className="Table__container">
+              <div className="Products__buttons">
+                <Link to="/products/add" className="btn btn-primary">
+                  Nuevo Producto
+                </Link>
+              </div>
 
-        <MDBDataTable striped bordered small data={data} />
+        <MDBDataTable striped bordered small data={data} responsiveSm />
 
         <Modal
           open={open}
@@ -200,7 +210,7 @@ const ProductList = (props) => {
           }}
         >
           <div style={modalStyle} className={classes.paper}>
-            <h3 className="mt-4">¿Seguro que desea eliminar el producto?</h3>
+            <h4 className="mt-4">¿Seguro que desea eliminar el producto?</h4>
             {/* <img className="img-fluid my-4" src={informacion.strDrinkThumb} /> */}
 
             <button
@@ -219,6 +229,7 @@ const ProductList = (props) => {
             <ul>{/* { mostrarIngredientes(informacion) } */}</ul>
           </div>
         </Modal>
+      </div>
       </div>
     </Layout>
   );
