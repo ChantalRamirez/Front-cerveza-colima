@@ -18,11 +18,14 @@ const AltaProducto = (props) => {
   const [producto, setProducto] = useState({
     name: "",
     description: "",
-    price: "",
-    image: "",
+    price: ""    
   });
 
-  const { name, description, price, image } = producto;
+  const [imageA3, setImageA3] = useState(null)
+
+  const [hasError,setHasError] = useState(false);  
+
+  const { name, description, price } = producto;
 
   //Leer datos del producto
   const onChangeProducto = (e) => {
@@ -32,35 +35,49 @@ const AltaProducto = (props) => {
     });
   };
 
+  
+
   const sendForm = async (e) => {
     e.preventDefault();
-    let tok = JSON.parse(localStorage.getItem("user"));
-    console.log("El token recuperado es:", tok.token);
-    let toki = tok.token;
 
-    console.log("prod: ", producto);
+    if(name.trim()===''||description.trim()===''||price.trim()==='' ){      
+      setHasError(true);
+      return;
+    }
+    
     const headers = {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${toki}`,
+      "Authorization": `Bearer ${token}`,
     };
+
+
+    const formData = new FormData();
+    formData.append('name',name)
+    formData.append('description',description)
+    formData.append('price',price)
+    formData.append('image',imageA3)
 
     Axios.post(
       "https://cerveceria-app.herokuapp.com/products/create",
-      producto,
+      formData,
       {
         headers: headers,
       }
     )
       .then((response) => {
         console.log(response);
+        setProducto({ name: "", description: "", price: "" });
+        setImageA3(null);
+        props.history.push("/products/list");
       })
       .catch((error) => {
         console.log(error);
+        setHasError(true)
       });
 
-    setProducto({ name: "", description: "", price: "", image: "" });
+    
 
-    props.history.push("/products/list");
+    
   };
 
   return (
@@ -84,6 +101,8 @@ const AltaProducto = (props) => {
         <fieldset className="text-center">
           <legend>Registro de Productos para catálogo</legend>
         </fieldset>
+
+        {hasError ? <label className="Label__alert">Todos los campos son obligatorios</label>: null}
 
         <div className="form-group">
           <label htmlFor="nameInput">Nombre del Producto</label>
@@ -130,10 +149,10 @@ const AltaProducto = (props) => {
             type="file"
             className="form-control"
             id="nameInput"
-            placeholder="Captura la imagen del producto"
+            placeholder="Seleccionar la imagen del producto"
             name="image"
-            onChange={onChangeProducto}
-            value={image}
+            onChange={(event) => setImageA3(event.target.files[0])}
+            
           />
         </div>
 

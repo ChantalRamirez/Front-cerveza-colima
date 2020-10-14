@@ -5,10 +5,23 @@ import Layout from "../../components/Layout";
 import './styles/UsersList.css'
 
 const UserEdit = (props)=>{
+<<<<<<< HEAD
   const usr = JSON.parse(localStorage.getItem("user"))
   if(!usr){
     props.history.push("/login2");
   }
+=======
+
+  const usr = JSON.parse(localStorage.getItem("user"))
+
+  if(!usr){
+    props.history.push("/login2");
+  }
+
+  const [hasError,setHasError] = useState(false);
+  const [ errorDescription, setErrorDescription ] = useState('');
+
+>>>>>>> e98d293b77f0b1c9cfca5299f1744fe066840402
   const { match } = props;
 
     let {id} = match.params;
@@ -31,8 +44,17 @@ const UserEdit = (props)=>{
  
 
     useEffect(()=>{
+      const token = usr.token; 
+
+      const headers = {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      };
+
       const getUserById = async () => {
-        const resultado = await axios.get(`https://cerveceria-app.herokuapp.com/users/${id}`)
+        const resultado = await axios.get(`https://cerveceria-app.herokuapp.com/users/${id}`,{
+          headers:headers
+        })
         setUser(resultado.data.user)
       }
   
@@ -43,20 +65,36 @@ const UserEdit = (props)=>{
 
     const sendForm = async (e) =>{
         e.preventDefault();
+        let usr = JSON.parse(localStorage.getItem("user"));    
+    let token = usr.token;
+
+    if(name.trim()===''||email.trim()===''||password.trim()==='' ){
+      setErrorDescription('Todos los datos del usuario son obligatorios')
+      setHasError(true);
+
+      return;
+    }
+
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
+    };
 
         // const prod = {name,description,price,image}
         console.log('sendForm: ',user)
         
         fetch(`https://cerveceria-app.herokuapp.com/users/update/${id}`, {
             method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
+            headers: headers,
             body: JSON.stringify(user),
           })
-            .then((res) => res.json())
-            .then((data) => console.log(data)).catch(error => console.log(error));
+          .then((res) => {
+            setUser({ name: "", email: "", password: "" });
+            props.history.push("/users/list");
+          })      
+          .catch((error) => {
+            console.log(error);
+          });
     }
 
   return (
@@ -80,6 +118,8 @@ const UserEdit = (props)=>{
             <legend>Modificación de datos de Usuarios</legend>
           </fieldset>
 
+          {hasError ? <label className="Label__alert">{errorDescription}</label>: null}
+
         <div className="form-group">
             <label htmlFor="nameInput">Nombre del Usuario</label>
             <input type="text" className="form-control" name="name" id="nameInput" placeholder="Captura el nombre del usuario" onChange={onChangeUser}  value={name} />
@@ -93,7 +133,7 @@ const UserEdit = (props)=>{
 
         <div className="form-group">
         <label htmlFor="priceInput">Password</label>
-            <input type="text" className="form-control" id="priceInput" placeholder="Captura el password" name="password" onChange={onChangeUser} value={password}/>
+            <input type="password" className="form-control" id="priceInput" placeholder="Captura el password" name="password" onChange={onChangeUser} value={password}/>
             
         </div>
 

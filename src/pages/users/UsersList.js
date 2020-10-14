@@ -29,6 +29,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const UsersList = (props) => {
+<<<<<<< HEAD
+=======
+
+    const usr = JSON.parse(localStorage.getItem("user"))
+    const token = (usr ? usr.token : '')
+
+>>>>>>> e98d293b77f0b1c9cfca5299f1744fe066840402
     // Configuración del modal de material-ui
     const usr = JSON.parse(localStorage.getItem("user"))
     const token = (usr ? usr.token : '')
@@ -55,9 +62,17 @@ const UsersList = (props) => {
     console.log('entra a useeffect')
       const getUsers = async () => {
         const url = "https://cerveceria-app.herokuapp.com/users";
+<<<<<<< HEAD
         const headers = {
           "Authorization": `Bearer ${token}`
         }
+=======
+        
+        const headers = {
+          "Authorization": `Bearer ${token}`
+        }
+
+>>>>>>> e98d293b77f0b1c9cfca5299f1744fe066840402
         const resultado = await axios.get(url,{
           headers: headers
         }).then(res => {
@@ -67,6 +82,10 @@ const UsersList = (props) => {
           props.history.push("/login2");
         })
         ;
+<<<<<<< HEAD
+=======
+        
+>>>>>>> e98d293b77f0b1c9cfca5299f1744fe066840402
       };
       getUsers();
   }, []);
