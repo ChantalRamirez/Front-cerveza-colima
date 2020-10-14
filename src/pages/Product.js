@@ -40,7 +40,7 @@ const Product = ({ product }) => {
     <div className="col-md-4 mb-3 mt-3">
       <div className="card">
         <h2 className="card-header">{product.name}</h2>
-        <img className="img-fluid my-4" src={product.image} />
+        <img className="img-fluid my-4"  src={product.image} />
         <img className="card-img-top" />
 
         <div className="card-body">
@@ -65,7 +65,7 @@ const Product = ({ product }) => {
       >
         <div style={modalStyle} className={classes.paper}>
           <h3 className="mt-4">{product.name}</h3>
-          <img className="img-fluid my-4" src={product.image} />
+          <img className="img-fluid my-4"  src={product.image} />
           <p>Descripción: {product.description}</p>
           <p>Precio: ${product.price}</p>
 
