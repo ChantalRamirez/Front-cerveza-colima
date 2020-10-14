@@ -69,7 +69,7 @@ const Product = ({ product }) => {
           <p>Descripción: {product.description}</p>
           <p>Precio: ${product.price}</p>
 
-          <ul>{/* { mostrarIngredientes(informacion) } */}</ul>
+          
         </div>
       </Modal>
     </div>

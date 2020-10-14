@@ -7,15 +7,14 @@ import Layout from "../../components/Layout";
 
 const EdicionProducto = (props)=>{
 
+  const usr = JSON.parse(localStorage.getItem("user"))
+
+if(!usr){
+  props.history.push("/login2");
+}
   const { match } = props;
 
     let {id} = match.params;
-
-    // const usr = JSON.parse(localStorage.getItem("user"))
-    // const token = usr.token
-
-  //guardar cambios
-  //implementar borrado de producto
 
     const [producto,setProducto] = useState({
       name:"",
@@ -25,7 +24,7 @@ const EdicionProducto = (props)=>{
     });
 
     const {name,description,price,image} = producto;
-    //const [image, setImage] = useState(null)
+    const [imageS3, setImageS3] = useState(null)
     const [hasError,setHasError] = useState(false);  
 
         //Leer datos del producto
@@ -77,19 +76,29 @@ const EdicionProducto = (props)=>{
           "Authorization": `Bearer ${token}`,
         };
 
-        fetch(`https://cerveceria-app.herokuapp.com/products/update/${id}`, {
-          method: "POST",
-          headers: headers,
-          body: JSON.stringify(producto),
-        })
-        .then((res) => {
-          setProducto({ name: "", description: "", price: "", image:"" });
-          props.history.push("/products/list");
-        })      
-        .catch((error) => {
-          console.log(error);
-          setHasError(true)
-        });
+        const formData = new FormData();
+        formData.append('name',name)
+        formData.append('description',description)
+        formData.append('price',price)
+        formData.append('image',imageS3)
+
+        Axios.post(
+          `https://cerveceria-app.herokuapp.com/products/update/${id}`,
+          formData,
+          {
+            headers: headers,
+          }
+        )
+          .then((response) => {
+            console.log(response);
+            setProducto({ name: "", description: "", price: "" });
+            setImageS3(null);
+            props.history.push("/products/list");
+          })
+          .catch((error) => {
+            console.log(error);
+            setHasError(true)
+          });
  
     }
 
@@ -135,8 +144,14 @@ const EdicionProducto = (props)=>{
         </div>
 
         <div className="form-group">
-        <label htmlFor="nameInput">Imagen</label>
-            <input type="text" className="form-control" id="nameInput" placeholder="Selecciona la imagen del producto" name="image" onChange={onChangeProducto} value={image}/>
+        <label htmlFor="imageInput">Imagen</label>
+            <input disabled type="text" className="form-control" id="priceInput" placeholder="Imagen actual del producto" name="price" value={image}/>
+            
+        </div>
+        
+        <div className="form-group">
+        <label htmlFor="s3Input">Cambiar Imagen</label>
+            <input type="file" className="form-control" id="nameInput" placeholder="Selecciona la imagen del producto" name="imageS3" onChange={(event) => setImageS3(event.target.files[0])}/>
             
         </div> 
 

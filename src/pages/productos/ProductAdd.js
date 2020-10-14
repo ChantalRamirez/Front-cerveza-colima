@@ -21,7 +21,7 @@ const AltaProducto = (props) => {
     price: ""    
   });
 
-  const [image, setImage] = useState(null)
+  const [imageA3, setImageA3] = useState(null)
 
   const [hasError,setHasError] = useState(false);  
 
@@ -55,7 +55,7 @@ const AltaProducto = (props) => {
     formData.append('name',name)
     formData.append('description',description)
     formData.append('price',price)
-    formData.append('image',image)
+    formData.append('image',imageA3)
 
     Axios.post(
       "https://cerveceria-app.herokuapp.com/products/create",
@@ -67,7 +67,7 @@ const AltaProducto = (props) => {
       .then((response) => {
         console.log(response);
         setProducto({ name: "", description: "", price: "" });
-        setImage(null);
+        setImageA3(null);
         props.history.push("/products/list");
       })
       .catch((error) => {
@@ -151,7 +151,7 @@ const AltaProducto = (props) => {
             id="nameInput"
             placeholder="Seleccionar la imagen del producto"
             name="image"
-            onChange={(event) => setImage(event.target.files[0])}
+            onChange={(event) => setImageA3(event.target.files[0])}
             
           />
         </div>
