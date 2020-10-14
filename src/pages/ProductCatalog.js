@@ -21,24 +21,12 @@ const CatalogoProductos = () => {
   return (
     <Layout>
       <div className="Container">
-<<<<<<< HEAD
-      <div className="Products__hero">
-                <div className="Products__container">
-                  <h3>Catálogo de productos</h3>
-                </div> 
-              </div>
-        
-              <div className="List__container">
-        <div className="row">
-          {products.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
-=======
+
+
         <div className="Products__hero">
           <div className="Products__container">
             <h3>Catálogo de productos</h3>
           </div>
->>>>>>> e98d293b77f0b1c9cfca5299f1744fe066840402
         </div>
 
         <div className="Products__container">

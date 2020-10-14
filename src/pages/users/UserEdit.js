@@ -5,12 +5,6 @@ import Layout from "../../components/Layout";
 import './styles/UsersList.css'
 
 const UserEdit = (props)=>{
-<<<<<<< HEAD
-  const usr = JSON.parse(localStorage.getItem("user"))
-  if(!usr){
-    props.history.push("/login2");
-  }
-=======
 
   const usr = JSON.parse(localStorage.getItem("user"))
 
@@ -21,7 +15,6 @@ const UserEdit = (props)=>{
   const [hasError,setHasError] = useState(false);
   const [ errorDescription, setErrorDescription ] = useState('');
 
->>>>>>> e98d293b77f0b1c9cfca5299f1744fe066840402
   const { match } = props;
 
     let {id} = match.params;

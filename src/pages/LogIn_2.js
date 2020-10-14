@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Axios from "axios";
-import './styles/Login.css';
+import './styles/LogIn.css';
 
 
 const Login = (props) => {
@@ -9,8 +9,6 @@ const Login = (props) => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [ hasError, setHasError ] = useState(false);
-
-    const [ passwordError, setPasswordError ] = useState(false);
 
     const [ errorDescription, setErrorDescription ] = useState('');    
 
