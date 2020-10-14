@@ -41,7 +41,7 @@
   
   .Product__container {
     width: 100%;
-    max-width: 580px;
+    max-width: 60%;
     height: auto;
     margin: 0 auto;
     padding: 20px 1rem; 
@@ -59,7 +59,7 @@
 
   .Form__container{
       /* background-color: lightgrey; */
-      width: 450px;
+      width: 700px;
       height: 400px;
       margin: 0 auto;
       padding: 20px 1rem; 

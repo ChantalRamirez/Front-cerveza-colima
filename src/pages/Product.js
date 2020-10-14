@@ -37,7 +37,7 @@ const Product = ({ product }) => {
     setOpen(false);
   };
   return (
-    <div className="col-md-4 mb-3 mt-3">
+    <div className="col-md-4 mb-3 mt-2">
       <div className="card">
         <h2 className="card-header">{product.name}</h2>
 

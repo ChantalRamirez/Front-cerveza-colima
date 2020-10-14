@@ -5,6 +5,7 @@ import { MDBDataTable,MDBBtn } from "mdbreact";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../../components/Layout";
+import './styles/UsersList.css'
 
 function getModalStyle() {
   const top = 50;
@@ -27,8 +28,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const UsersList = () => {
+const UsersList = (props) => {
     // Configuración del modal de material-ui
+    const usr = JSON.parse(localStorage.getItem("user"))
+    const token = (usr ? usr.token : '')
+
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
 
@@ -47,15 +51,24 @@ const UsersList = () => {
 
     const [users, setUsers] = useState([])
 
-   useEffect(() => {
+  useEffect(() => {
     console.log('entra a useeffect')
       const getUsers = async () => {
         const url = "https://cerveceria-app.herokuapp.com/users";
-        const resultado = await axios.get(url);
-        setUsers(resultado.data.users)
+        const headers = {
+          "Authorization": `Bearer ${token}`
+        }
+        const resultado = await axios.get(url,{
+          headers: headers
+        }).then(res => {
+          setUsers(res.data.users)
+        }).catch((error) => {
+          console.log(error)
+          props.history.push("/login2");
+        })
+        ;
       };
       getUsers();
- 
   }, []);
 
   const columnas = [
@@ -109,13 +122,23 @@ const UsersList = () => {
   return (
       
     <Layout>
-    <div className="container mt-3">
-      <h1>Lista de Usuarios</h1>
-      <Link to="/users/add" className="btn btn-primary mt-3">
-        Nuevo Usuario
-      </Link>
+    <div className="Container">
+          <div className="Products">
+            <div className="Products__hero">
+              <div className="Products__container">
+                <h3>Gestión de usuarios</h3>
+              </div> 
+            </div>
+          </div>
+          <div className="Table__container">
+          <div className="Products__buttons">
+            <Link to="/users/add" className="btn btn-primary mt-3">
+              Nuevo Usuario
+            </Link>
+          </div>
+      
 
-      <MDBDataTable 
+      <MDBDataTable responsiveSm
       striped 
       bordered 
       small 
@@ -134,7 +157,7 @@ const UsersList = () => {
                       </button>
         </div>
       </Modal>
-    
+    </div>
     </div>
     </Layout>
   );

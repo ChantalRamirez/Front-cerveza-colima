@@ -1,9 +1,14 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
+import Layout from "../../components/Layout";
+import './styles/UsersList.css'
 
 const UserEdit = (props)=>{
-
+  const usr = JSON.parse(localStorage.getItem("user"))
+  if(!usr){
+    props.history.push("/login2");
+  }
   const { match } = props;
 
     let {id} = match.params;
@@ -55,12 +60,21 @@ const UserEdit = (props)=>{
     }
 
   return (
-    <div className="container">
-      <h1 className="mt-3">Edición de Usuarios</h1>
+    <Layout>
+    <div className="Container">
+          <div className="Products">
+            <div className="Products__hero">
+              <div className="Products__container">
+                <h3>Edición de usuarios</h3>
+              </div> 
+            </div>
+          </div>
+          <div className="Table__container">
+          <div className="Products__buttons">
       <Link to="/users/list" className="btn btn-primary mt-3">
           Regresar
         </Link>
-
+        </div>
       <form onSubmit={sendForm}>
       <fieldset className="text-center">
             <legend>Modificación de datos de Usuarios</legend>
@@ -93,8 +107,9 @@ const UserEdit = (props)=>{
 
       </form>
 
-      
+      </div>  
     </div>
+    </Layout>
   );
 };
 

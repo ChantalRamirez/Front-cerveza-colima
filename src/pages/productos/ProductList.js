@@ -201,7 +201,7 @@ const ProductList = (props) => {
                 </Link>
               </div>
 
-        <MDBDataTable striped bordered small data={data} responsiveSm />
+        <MDBDataTable striped bordered small data={data} responsive />
 
         <Modal
           open={open}

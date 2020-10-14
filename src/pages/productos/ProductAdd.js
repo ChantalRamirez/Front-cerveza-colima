@@ -127,7 +127,7 @@ const AltaProducto = (props) => {
         <div className="form-group">
           <label htmlFor="nameInput">Imagen</label>
           <input
-            type="text"
+            type="file"
             className="form-control"
             id="nameInput"
             placeholder="Captura la imagen del producto"

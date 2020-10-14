@@ -23,7 +23,6 @@ const CatalogoProductos = () => {
 
   return (
     <Layout>
-      
       <div className="Container">
       <div className="Products__hero">
                 <div className="Products__container">
@@ -31,7 +30,7 @@ const CatalogoProductos = () => {
                 </div> 
               </div>
         
-              <div className="Products__container">
+              <div className="List__container">
         <div className="row">
           {products.map((product) => (
             <Product key={product.id} product={product} />

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Layout from "../../components/Layout";
+import './styles/UsersList.css'
 
-const UserAdd = () => {
+
+const UserAdd = (props) => {
+  const usr = JSON.parse(localStorage.getItem("user"))
+  if(!usr){
+    props.history.push("/login2");
+  }
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -40,11 +48,21 @@ const UserAdd = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="mt-3">Alta de Usuarios</h1>
+    <Layout>
+    <div className="Container">
+          <div className="Products">
+            <div className="Products__hero">
+              <div className="Products__container">
+                <h3>Alta de usuarios</h3>
+              </div> 
+            </div>
+          </div>
+          <div className="Table__container">
+          <div className="Products__buttons">
         <Link to="/users/list" className="btn btn-primary mt-3">
           Regresar
         </Link>
+        </div>
 
       <form onSubmit={sendForm}>
         <fieldset className="text-center">
@@ -98,7 +116,9 @@ const UserAdd = () => {
           />
         </div>
       </form>
+      </div>
     </div>
+  </Layout>
   );
 };
 
