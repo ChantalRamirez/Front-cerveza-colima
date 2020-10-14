@@ -27,7 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const UsersList = () => {
+const UsersList = (props) => {
+
+    const usr = JSON.parse(localStorage.getItem("user"))
+    const token = (usr ? usr.token : '')
+
     // Configuración del modal de material-ui
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -51,8 +55,21 @@ const UsersList = () => {
     console.log('entra a useeffect')
       const getUsers = async () => {
         const url = "https://cerveceria-app.herokuapp.com/users";
-        const resultado = await axios.get(url);
-        setUsers(resultado.data.users)
+        
+        const headers = {
+          "Authorization": `Bearer ${token}`
+        }
+
+        const resultado = await axios.get(url,{
+          headers: headers
+        }).then(res => {
+          setUsers(res.data.users)
+        }).catch((error) => {
+          console.log(error)
+          props.history.push("/login2");
+        })
+        ;
+        
       };
       getUsers();
  

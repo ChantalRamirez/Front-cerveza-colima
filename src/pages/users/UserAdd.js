@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const UserAdd = () => {
+const UserAdd = (props) => {
+
+  const usr = JSON.parse(localStorage.getItem("user"))
+
+  if(!usr){
+    props.history.push("/login2");
+  }
+
   const [user, setUser] = useState({
     name: "",
     email: "",

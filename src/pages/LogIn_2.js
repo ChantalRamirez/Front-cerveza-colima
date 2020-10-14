@@ -7,6 +7,8 @@ const Login = (props) => {
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const [ hasError, setHasError ] = useState(false);
+    const [ errorDescription, setErrorDescription ] = useState('');
 
     const onChangeEmail = (e) => {
       const usr = e.target.value;
@@ -21,7 +23,7 @@ const Login = (props) => {
     const login = async (e) => {
       e.preventDefault();
       await Axios({
-        method: "POST",
+        method: "POST", 
         data: {
           email: email,
           password: password
@@ -30,10 +32,19 @@ const Login = (props) => {
         url: "https://cerveceria-app.herokuapp.com/auth/login"
       }).then((res) =>{
         if(res.data.token){
+          console.log(res)
+          console.log(res.statusText)
           localStorage.setItem("user", JSON.stringify(res.data));
-        }
+          props.history.push("/products/list");
+        }        
       })
-      props.history.push("/products/list");
+      .catch((error) => {          
+        console.log('Error en login: ',error.response)
+        setHasError(true)
+        const mess = (error.response.data.message === 'Missing credentials' ? 'El email y contraseña son obligatorios' : error.response.data.message);
+        setErrorDescription(mess)
+      });
+      
     };
 
   return (
@@ -44,6 +55,8 @@ const Login = (props) => {
         <fieldset className="text-center">
           <legend>Inicio de sesión</legend>
         </fieldset>
+
+  {hasError ? <label className="Label__alert">ERROR: {errorDescription}</label>: null}
 
         <div className="form-group">
           <label htmlFor="email">Email</label>
@@ -59,9 +72,9 @@ const Login = (props) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Descripción</label>
+          <label htmlFor="password">Contraseña</label>
           <input
-            type="text"
+            type="password"
             className="form-control"
             id="password"
             placeholder="Ingresa tu contraseña"

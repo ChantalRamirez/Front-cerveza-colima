@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 
 const UserEdit = (props)=>{
 
+  const usr = JSON.parse(localStorage.getItem("user"))
+
+  if(!usr){
+    props.history.push("/login2");
+  }
+
   const { match } = props;
 
     let {id} = match.params;
