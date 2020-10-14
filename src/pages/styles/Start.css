@@ -6,9 +6,11 @@
     color: #ffffff;
     display: flex;
     align-items: center;
+    justify-items: center; 
 }
 
 .Logo{
+   
     display: flex;
     justify-content: center;
     align-items: center; 

@@ -16,16 +16,16 @@ function Start()  {
               className="img-fluid mb-4"
             />
             <h1>Cerveza Colima</h1>
-          </div>
-          <div className="button_start">
-            <Link className="btn btn-primary btn-lg" to="/home">
+          </div> 
+          <div className="button_start"> 
+          <Link className="btn btn-primary btn-lg" to="/home">
               Entrar
             </Link>
-          </div>
+          </div> 
         </div>
       </div>
-      <Footer/>
-    </React.Fragment>
+     <Footer/>
+   </React.Fragment>
   );
 }
 

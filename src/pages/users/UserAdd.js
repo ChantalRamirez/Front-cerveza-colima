@@ -1,21 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from "../../components/Layout";
-import './styles/UsersList.css'
+import './styles/UsersList.css';
 
 
 const UserAdd = (props) => {
   const usr = JSON.parse(localStorage.getItem("user"))
-  if(!usr){
-    props.history.push("/login2");
-  }
-
-<<<<<<< HEAD
-=======
-const UserAdd = (props) => {
-
-  const usr = JSON.parse(localStorage.getItem("user"))
-
   if(!usr){
     props.history.push("/login2");
   }
@@ -23,7 +13,6 @@ const UserAdd = (props) => {
   const [hasError,setHasError] = useState(false);
   const [ errorDescription, setErrorDescription ] = useState('');
 
->>>>>>> e98d293b77f0b1c9cfca5299f1744fe066840402
   const [user, setUser] = useState({
     name: "",
     email: "",
