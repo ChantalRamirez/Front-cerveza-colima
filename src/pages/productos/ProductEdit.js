@@ -44,7 +44,6 @@ const EdicionProducto = (props)=>{
 
       const getProductoById = async () => {
     
-        console.log("prod: ", producto);
         const headers = {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,

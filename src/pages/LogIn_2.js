@@ -9,8 +9,13 @@ const Login = (props) => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [ hasError, setHasError ] = useState(false);
+
     const [ passwordError, setPasswordError ] = useState(false);
 
+    const [ errorDescription, setErrorDescription ] = useState('');    
+
+
+ 
     const onChangeEmail = (e) => {
       const usr = e.target.value;
       setEmail(usr);
@@ -24,7 +29,7 @@ const Login = (props) => {
     const login = async (e) => {
       e.preventDefault();
       await Axios({
-        method: "POST",
+        method: "POST", 
         data: {
           email: email,
           password: password
@@ -33,26 +38,31 @@ const Login = (props) => {
         url: "https://cerveceria-app.herokuapp.com/auth/login"
       }).then((res) =>{
         if(res.data.token){
+          console.log(res)
+          console.log(res.statusText)
           localStorage.setItem("user", JSON.stringify(res.data));
-        }
+          props.history.push("/products/list");
+        }        
       })
-      props.history.push("/products/list");
+      .catch((error) => {          
+        console.log('Error en login: ',error.response)
+        setHasError(true)
+        const mess = (error.response.data.message === 'Missing credentials' ? 'El email y contraseña son obligatorios' : error.response.data.message);
+        setErrorDescription(mess)
+      });
+      
     };
 
   return (
     <Layout>
+
       <div className="Container">
         <div className="Product">
           <div className="Product__hero"></div>
         </div>
         <div className="Login__container">
-          <h2 className="Text__center">Inicio de sesión</h2>
-            {hasError &&
-              <label className="Label__alert"> 
-                Su contraseña o usuario son incorrectos 
-                o no existen en nuestra plataforma.
-              </label>
-            }
+          <h2 className="Text__center">Inicio de sesión</h2>         
+            {hasError ? <label className="Label__alert">{errorDescription}</label>: null}
             <form onSubmit={login} className="Login__container">
                 <label htmlFor="email">Email</label>
                   <input
@@ -74,11 +84,7 @@ const Login = (props) => {
                     onChange={onChangePassword}
                     value={password}
                   />
-                   { passwordError && 
-                                <label className="Label__Error">
-                                    Contraseña inválida o incompleta
-                                </label>
-                            }
+                  
                 <input
                   type="submit"
                   className="btn btn-block btn-primary Button__container"
@@ -88,6 +94,7 @@ const Login = (props) => {
             </form>
       
       </div>
+
 
       </div>
     </Layout>

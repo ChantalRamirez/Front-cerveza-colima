@@ -33,6 +33,7 @@ const Nav_bar = () => {
             <Nav.Link as={Link} to="/products">Productos</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
             {usr[0] ? <Nav.Link as={Link} to="/products/list">Gestión de Productos</Nav.Link> : null}            
+            {usr[0] ? <Nav.Link as={Link} to="/users/list">Gestión de Usuarios</Nav.Link> : null}            
             {usr[0] ? <Button onClick={logout} variant="btn btn-secondary" type="submit" as={Link} to="/login2" >Logout</Button> :
              <Nav.Link className="btn btn-primary" as={Link} to="/login2">Iniciar sesión</Nav.Link>
             }
@@ -43,8 +44,5 @@ const Nav_bar = () => {
   );
 
 } 
-  
-  
-    
 
 export default Nav_bar;

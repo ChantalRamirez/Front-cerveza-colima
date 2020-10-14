@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const UserAdd = () => {
+const UserAdd = (props) => {
+
+  const usr = JSON.parse(localStorage.getItem("user"))
+
+  if(!usr){
+    props.history.push("/login2");
+  }
+
+  const [hasError,setHasError] = useState(false);
+  const [ errorDescription, setErrorDescription ] = useState('');
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -20,23 +30,35 @@ const UserAdd = () => {
 
   const sendForm = async (e) => {
     e.preventDefault();
+    let usr = JSON.parse(localStorage.getItem("user"));    
+    let token = usr.token;
 
-    // const prod = {name,description,price,image}
-    console.log("prod: ", user);
+    if(name.trim()===''||email.trim()===''||password.trim()==='' ){
+      setErrorDescription('Todos los datos del usuario son obligatorios')
+      setHasError(true);
+
+      return;
+    }
+
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
+    };
 
     fetch("https://cerveceria-app.herokuapp.com/users/create", {
       method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+      headers: headers,
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        setUser({ name: "", email: "", password: "" });
+        props.history.push("/users/list");
+      })      
+      .catch((error) => {
+        console.log(error);
+      });
 
-    setUser({ name: "", email: "", password: "" });
+    
   };
 
   return (
@@ -50,6 +72,8 @@ const UserAdd = () => {
         <fieldset className="text-center">
           <legend>Registro de Usuarios del sistema</legend>
         </fieldset>
+
+        {hasError ? <label className="Label__alert">{errorDescription}</label>: null}
 
         <div className="form-group">
           <label htmlFor="nameInput">Nombre del Usuario</label>
