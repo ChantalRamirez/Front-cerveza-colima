@@ -39,16 +39,12 @@ const AltaProducto = (props) => {
 
   const sendForm = async (e) => {
     e.preventDefault();
-    let usr = JSON.parse(localStorage.getItem("user"));    
-    let token = usr.token;
 
-    if(name.trim()===''||description.trim()===''||price.trim()==='' ){
-      
+    if(name.trim()===''||description.trim()===''||price.trim()==='' ){      
       setHasError(true);
       return;
     }
-
-    console.log("prod: ", producto);
+    
     const headers = {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${token}`,

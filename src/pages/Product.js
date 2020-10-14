@@ -66,7 +66,6 @@ const Product = ({ product }) => {
         <div style={modalStyle} className={classes.paper}>
           <h3 className="mt-4">{product.name}</h3>
           <img className="img-fluid my-4" src={product.image} />
-          <p>la imagen va aquí</p>
           <p>Descripción: {product.description}</p>
           <p>Precio: ${product.price}</p>
 

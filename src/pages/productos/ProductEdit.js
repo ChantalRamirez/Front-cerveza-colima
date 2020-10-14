@@ -11,10 +11,8 @@ const EdicionProducto = (props)=>{
 
     let {id} = match.params;
 
-    const [usr,setUsr] = useState(JSON.parse(localStorage.getItem("user")))
-    const [token,setToken] = useState(usr.token)
-
-
+    // const usr = JSON.parse(localStorage.getItem("user"))
+    // const token = usr.token
 
   //guardar cambios
   //implementar borrado de producto
@@ -27,10 +25,12 @@ const EdicionProducto = (props)=>{
     });
 
     const {name,description,price,image} = producto;
+    //const [image, setImage] = useState(null)
+    const [hasError,setHasError] = useState(false);  
 
         //Leer datos del producto
         const onChangeProducto = e =>{
-          console.log(producto.image)
+          
           setProducto({
               ...producto,
               [e.target.name] : e.target.value
@@ -39,6 +39,7 @@ const EdicionProducto = (props)=>{
  
 
     useEffect(()=>{
+       const usr = JSON.parse(localStorage.getItem("user"))
 
       const token = usr.token; 
 
@@ -49,11 +50,9 @@ const EdicionProducto = (props)=>{
           "Authorization": `Bearer ${token}`,
         };
 
-        const result = await Axios.get(`https://cerveceria-app.herokuapp.com/products/${id}`,
-        {
-          headers: headers
-        })
-        console.log('getProductoById: ',result.data.product)
+    
+
+        const result = await Axios.get(`https://cerveceria-app.herokuapp.com/products/${id}`,{headers})
         setProducto(result.data.product)
       }
   
@@ -65,22 +64,32 @@ const EdicionProducto = (props)=>{
     const sendForm = async (e) =>{
         e.preventDefault();
 
+        let usr = JSON.parse(localStorage.getItem("user"));    
+        let token = usr.token;
+
+        if(name.trim()===''||description.trim()==='' ){      
+          setHasError(true);
+          return;
+        }
+
         const headers = {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
         };
 
-        const res = Axios.post(`https://cerveceria-app.herokuapp.com/products/update/${id}`,producto,
-        {
-          headers:headers
-        }).then((response) => {
-          console.log(response);
+        fetch(`https://cerveceria-app.herokuapp.com/products/update/${id}`, {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(producto),
         })
+        .then((res) => {
+          setProducto({ name: "", description: "", price: "", image:"" });
+          props.history.push("/products/list");
+        })      
         .catch((error) => {
           console.log(error);
+          setHasError(true)
         });
-
-        props.history.push("/products/list");
  
     }
 
@@ -106,6 +115,8 @@ const EdicionProducto = (props)=>{
             <legend>Modificación de Productos para catálogo</legend>
           </fieldset>
 
+          {hasError ? <label className="Label__alert">Todos los campos son obligatorios</label>: null}
+
         <div className="form-group">
             <label htmlFor="nameInput">Nombre del Producto</label>
             <input type="text" className="form-control" name="name" id="nameInput" placeholder="Captura el nombre del producto" onChange={onChangeProducto}  value={name} />
@@ -125,7 +136,7 @@ const EdicionProducto = (props)=>{
 
         <div className="form-group">
         <label htmlFor="nameInput">Imagen</label>
-            <input type="text" className="form-control" id="nameInput" placeholder="Captura la imagen del producto" name="image" onChange={onChangeProducto}  value={image}/>
+            <input type="text" className="form-control" id="nameInput" placeholder="Selecciona la imagen del producto" name="image" onChange={onChangeProducto} value={image}/>
             
         </div> 
 

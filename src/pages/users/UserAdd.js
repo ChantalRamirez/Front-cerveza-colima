@@ -36,7 +36,6 @@ const UserAdd = (props) => {
     if(name.trim()===''||email.trim()===''||password.trim()==='' ){
       setErrorDescription('Todos los datos del usuario son obligatorios')
       setHasError(true);
-
       return;
     }
 

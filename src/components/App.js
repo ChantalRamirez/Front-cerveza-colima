@@ -7,7 +7,7 @@ import ProductNew from '../pages/ProductNew';
 import MiComponente404 from '../pages/NotFound';
 import We from '../pages/We';
 import Contact from '../pages/Contact';
-import Login from '../pages/Login';
+//import Login from '../pages/Login';
 
 import ProductCatalog from "../pages/ProductCatalog";
 import ProductAdd from "../pages/productos/ProductAdd";
@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/we" component={We} />         
         <Route exact path="/product/new" component={ProductNew} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/login" component={Login} />
+        {/* <Route exact path="/login" component={Login} /> */}
 
         <Route exact path="/products" component={ProductCatalog} />
         <Route exact path="/login2" component={Login_2} />
