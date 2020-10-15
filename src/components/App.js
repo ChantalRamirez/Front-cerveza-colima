@@ -20,7 +20,7 @@ import UserAdd from "../pages/users/UserAdd";
 import UserEdit from "../pages/users/UserEdit";
 
 //Login2
-import Login_2 from "../pages/Login_2";
+import Login from "../pages/Login";
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/product/new" component={ProductNew} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/products" component={ProductCatalog} />
-        <Route exact path="/login2" component={Login_2} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/products/add" component={ProductAdd} />
         <Route exact path="/products/edit/:id" component={ProductEdit} />
         <Route exact path="/products/list" component={ProductList} />
