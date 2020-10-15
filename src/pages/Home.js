@@ -8,7 +8,6 @@ import image1 from '../images/welcome.png';
 import image2 from '../images/nosotros.jpg';
 import image3 from '../images/nuestros_productos.jpg';
 
-
 export default class Home extends Component {
   render() {
     return (

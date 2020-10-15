@@ -5,30 +5,26 @@
     color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
-  }
+    align-items: center;}
 
 .social-link{
   display: inline-block;
   width: 40px;
   height: 40px;
-    /* border: 1px solid white; */
   background-size: 50px 50px;
-    margin: 0 10px;
-    background-image: '../';
-  }
+  margin: 0 10px;
+  background-image: '../';
+}
 
-  .Footer__container{
-    margin-left: 30px;
-  }
-
-  
- @media (max-width: 400px){
+.Footer__container{
+  margin-left: 30px;
+}
+ 
+@media (max-width: 400px){
   .Footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
- }
+}

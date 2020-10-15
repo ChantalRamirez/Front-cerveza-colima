@@ -200,37 +200,32 @@ const ProductList = (props) => {
                   Nuevo Producto
                 </Link>
               </div>
-
-        <MDBDataTable striped bordered small data={data} responsive />
-
-        <Modal
-          open={open}
-          onClose={() => {
-            handleClose();
-          }}
-        >
-          <div style={modalStyle} className={classes.paper}>
-            <h4 className="mt-4">¿Seguro que desea eliminar el producto?</h4>
-            {/* <img className="img-fluid my-4" src={informacion.strDrinkThumb} /> */}
-
-            <button
-              type="button"
-              className="btn-danger"
-              onClick={() => {
-                handleClose(idProduct);
-              }}
-            >
-              {" "}
-              Confirma la eliminación
-            </button>
-
-            {/*<p>Precio: ${producto.price}</p> */}
-
-            <ul>{/* { mostrarIngredientes(informacion) } */}</ul>
+              <MDBDataTable striped bordered small data={data} responsive />
+                <Modal
+                  open={open}
+                  onClose={() => {
+                    handleClose();
+                  }}
+                >
+                <div style={modalStyle} className={classes.paper}>
+                  <h4 className="mt-4">¿Seguro que desea eliminar el producto?</h4>
+                  {/* <img className="img-fluid my-4" src={informacion.strDrinkThumb} /> */}
+                  <button
+                    type="button"
+                    className="btn-danger"
+                    onClick={() => {
+                      handleClose(idProduct);
+                    }}
+                  >
+                    {" "}
+                    Confirma la eliminación
+                  </button>
+                  {/*<p>Precio: ${producto.price}</p> */}
+                   <ul>{/* { mostrarIngredientes(informacion) } */}</ul>
+                </div>
+              </Modal>
+            </div>
           </div>
-        </Modal>
-      </div>
-      </div>
     </Layout>
   );
 };

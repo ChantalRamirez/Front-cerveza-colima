@@ -109,8 +109,6 @@ const UsersList = (props) => {
     rObj['name'] = user.name;
     rObj['email'] = user.email;
     rObj['update'] = <Link to={`/users/edit/${user.id}`}  className="btn-warning ">Update</Link> 
-  
-
     return rObj;
   });
 
@@ -119,48 +117,42 @@ const UsersList = (props) => {
     rows: records,
   };
 
-
-
-  return (
-      
+  return ( 
     <Layout>
-    <div className="Container">
-          <div className="Products">
-            <div className="Products__hero">
-              <div className="Products__container">
-                <h3>Gestión de usuarios</h3>
-              </div> 
-            </div>
+      <div className="Container">
+        <div className="Products">
+          <div className="Products__hero">
+            <div className="Products__container">
+              <h3>Gestión de usuarios</h3>
+            </div> 
           </div>
-          <div className="Table__container">
+        </div>
+        <div className="Table__container">
           <div className="Products__buttons">
             <Link to="/users/add" className="btn btn-primary mt-3">
               Nuevo Usuario
             </Link>
           </div>
-      
-
-      <MDBDataTable responsiveSm
-      striped 
-      bordered 
-      small 
-      data={data} />
-
-<Modal
-        open={open}
-        onClose={() => {
-          handleClose();
-        }}
-      >
-        <div style={modalStyle} className={classes.paper}>
-           <h3 className="mt-4">¿Seguro que desea eliminar el producto?</h3> 
-          <button type="button"  className="btn-danger"  onClick={() => {handleClose(idUser)}}
-                        > Confirma la eliminación
-                      </button>
+          <MDBDataTable responsiveSm
+            striped 
+            bordered 
+            small 
+            data={data} />
+          <Modal
+            open={open}
+            onClose={() => {
+              handleClose();
+            }}
+          >
+            <div style={modalStyle} className={classes.paper}>
+              <h3 className="mt-4">¿Seguro que desea eliminar el producto?</h3> 
+              <button type="button"  className="btn-danger"  onClick={() => {handleClose(idUser)}}
+              > Confirma la eliminación
+              </button>
+            </div>
+          </Modal>
         </div>
-      </Modal>
-    </div>
-    </div>
+      </div>
     </Layout>
   );
 };

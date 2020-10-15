@@ -11,12 +11,10 @@ class ProductsListItem extends React.Component {
           src={this.props.product.avatarUrl}
           alt={`${this.props.product.firstName} ${this.props.product.lastName}`}
         />
-
         <div className="BadgesListItem__details">
           <h5>
             {this.props.product.firstName} {this.props.product.lastName}
           </h5>
-    
           <p className="item-twitter">
           <img
           src={twitterIcon}

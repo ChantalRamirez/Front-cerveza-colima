@@ -4,77 +4,72 @@
     width: 100%;
     min-height: calc(98vh - 60px);
     min-width: 100%;
+}
+
+.Product__hero {
+  width: 100%;
+  padding: 2rem 0;
+  background: url('../../images/retro.jpg'), #1B1B25;
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+}
+
+.Text__center{
+  color: black;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.Button__container{
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
   
-  }
-
-  .Product__hero {
-    width: 100%;
-    padding: 2rem 0;
-    background: url('../../images/retro.jpg'), #1B1B25;
-    background-repeat: repeat;
-    margin-bottom: 1rem;
-  }
-
-  .Text__center{
-    color: black;
-    text-align: center;
-    margin-bottom: 50px;
-    /* margin-top: 30px; */
-  }
-
-  .Button__container{
-      align-items: center;
-      margin-top: 20px;
-      margin-bottom: 30px;
-      width: 400px;
-      display: flex;
-      justify-content: center;
-      border-radius: 10px;
-  }
+.Product__hero>.Product__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
   
-  .Product__hero>.Product__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .Product__container {
-    width: 100%;
-    max-width: 60%;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px 1rem; 
-  }
+.Product__container {
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 1rem; 
+}
 
-  .Login__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid #E1E1E1;  */
-    border-radius: 5px;
-    
-  }
+.Login__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px; 
+}
 
-  .Form__container{
-      /* background-color: lightgrey; */
-      width: 700px;
-      height: 400px;
-      margin: 0 auto;
-      padding: 20px 1rem; 
-  }
+.Form__container{
+  width: 700px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 20px 1rem; 
+}
   
-  .Label__Error{
-    font-size: 12px;
-    color: red;
-    background: rgb(224,204, 204);
-    width: fit-content;
-    height: fit-content;
-    padding: 0 5px;
-    box-sizing: border-box;
-    border-radius: 5px;
-  }
+.Label__Error{
+  font-size: 12px;
+  color: red;
+  background: rgb(224,204, 204);
+  width: fit-content;
+  height: fit-content;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
 
 .Label__alert{
   font-size: 12px;
@@ -86,7 +81,6 @@
   box-sizing: border-box;
   border-radius: 5px;
   margin-bottom: 10px;
-
 }
 
 .RegularStyle{
@@ -116,21 +110,20 @@
   font-size: 16px;
 }
 
+@media (max-width: 400px){
+  .Login__container{
+    width: 95%;
+  }
+  
+  .Container{
+    width: 95%;
+  }
 
- @media (max-width: 400px){
-    .Login__container{
-      width: 95%;
-    }
- 
-    .Container{
-      width: 95%;
-    }
+  .Button__container{
+    width: 50%;
+  }
 
-    .Button__container{
-      width: 50%;
-    }
-
-    .RegularStyle{
-      width: 95%;
-    }
- }
+  .RegularStyle{
+    width: 95%;
+  }
+}

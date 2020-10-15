@@ -15,8 +15,8 @@ const Navbar = (props) => {
 
   return(
     <div className="Navbar">
-    <div className="container-fluid"> 
-      <Link className="Navbar__brand" to="/">
+      <div className="container-fluid"> 
+        <Link className="Navbar__brand" to="/">
         <div>
           <img className="Navbar__brand-logo" src={logo} alt="Logo" />
           <span className="font-weight-bold">Cerveza Colima</span>
@@ -40,10 +40,9 @@ const Navbar = (props) => {
           </ol>
           {usr[0] ? <button className="btn btn-secondary" onClick={logout}> Logout </button> :
           <Link className="btn btn-primary"  to="/login"> Log In </Link>}
-
         </nav>           
-      </Link>
-    </div>
+        </Link>
+      </div>
     </div>
   )
 }

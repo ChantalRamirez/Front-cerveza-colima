@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import Layout from "../components/Layout";
 import axios from "axios";
-import { Link } from 'react-router';
 import "./styles/Products.css";
 
 const CatalogoProductos = () => {
@@ -23,26 +22,17 @@ const CatalogoProductos = () => {
     <Layout>
       <div className="Container">
         <div className="Products__hero">
-                <div className="Products__container">
-                  <h3>Catálogo de productos</h3>
-                </div> 
-              </div>
-        
-              <div className="List__container">
-        <div className="row">
-          {products.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
-
-        <div className="Products__container">
+          <div className="Products__container">
+            <h3>Catálogo de productos</h3>
+          </div> 
+        </div>
+        <div className="List__container">
           <div className="row">
             {products.map((product) => (
-              <Product key={product.id} product={product} />
+            <Product key={product.id} product={product} />
             ))}
           </div>
         </div>
-      </div>
-      </div>
       </div>
     </Layout>
   );

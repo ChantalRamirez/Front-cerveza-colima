@@ -7,13 +7,12 @@ import ProductNew from '../pages/ProductNew';
 import MiComponente404 from '../pages/NotFound';
 import We from '../pages/We';
 import Contact from '../pages/Contact';
-//import Login from '../pages/Login';
 
+//products
 import ProductCatalog from "../pages/ProductCatalog";
 import ProductAdd from "../pages/productos/ProductAdd";
 import ProductEdit from "../pages/productos/ProductEdit";
 import ProductList from "../pages/productos/ProductList";
-import Layout from "../components/Layout";
 
 //users
 import UsersList from "../pages/users/UsersList";
@@ -33,8 +32,6 @@ function App() {
         <Route exact path="/we" component={We} />         
         <Route exact path="/product/new" component={ProductNew} />
         <Route exact path="/contact" component={Contact} />
-        {/* <Route exact path="/login" component={Login} /> */}
-
         <Route exact path="/products" component={ProductCatalog} />
         <Route exact path="/login2" component={Login_2} />
         <Route exact path="/products/add" component={ProductAdd} />
@@ -43,7 +40,6 @@ function App() {
         <Route exact path="/users/list" component={UsersList} />
         <Route exact path="/users/add" component={UserAdd} />
         <Route exact path="/users/edit/:id" component={UserEdit} />
-
         <Route exact path="/404" component={MiComponente404} />
         <Redirect from="*" to="/404" />
       </Switch>

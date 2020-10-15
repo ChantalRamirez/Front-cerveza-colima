@@ -1,0 +1,31 @@
+.image_style{
+    width: 100%;
+    height: auto;
+}
+
+.Image__card{
+    width: auto;
+    height: 280px;
+}
+
+.text__container{
+ text-align: center;
+}
+
+.Card__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: auto;
+    margin: 5px;    
+}
+
+.header__container{
+    font-size: 16;
+    height: 50px;
+    width: auto;
+}
+
+
+  

@@ -4,7 +4,6 @@ import logo from '../images/cerveza.svg';
 import {Navbar, Nav, Button } from 'react-bootstrap';
 import './styles/Nav_bar.css';
 
-
 const Nav_bar = () => {
 
   const usr = useState(JSON.parse(localStorage.getItem("user")))
@@ -25,9 +24,9 @@ const Nav_bar = () => {
           />
           Cerveza Colima
           </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
-          <Nav >
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+          <Nav>
             <Nav.Link as={Link} to="/home" >Inicio</Nav.Link>
             <Nav.Link as={Link} to="/we">Nosotros</Nav.Link>
             <Nav.Link as={Link} to="/products">Productos</Nav.Link>
@@ -37,12 +36,10 @@ const Nav_bar = () => {
             {usr[0] ? <Button onClick={logout} variant="btn btn-secondary" type="submit" as={Link} to="/login2" >Logout</Button> :
              <Nav.Link className="btn btn-primary" as={Link} to="/login2">Iniciar sesión</Nav.Link>
             }
-
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
+    </Navbar>
   );
-
 } 
 
 export default Nav_bar;

@@ -6,11 +6,11 @@
   align-content: center;
   
 }
+
 .menu{
   margin: 0px;
   display: flex;
 }
-
 
 .Navbar__brand {
   color: #ffffff;
@@ -19,15 +19,15 @@
   justify-content: space-between;
 }
 
-
-
 #nav{
   margin: 0px;
 }
+
 .menu ol{
   display: flex;
   margin: 0;
 }
+
 .menu ol li{
   display: flex;
   padding-right: 50px;
@@ -39,12 +39,12 @@
   color: white;
   text-decoration: none;
   margin: 0;
-  
 }
 
 .menu a:hover{
   color: #c4b211;
 }
+
 .Navbar__brand:hover {
   color: #ffffff;
   text-decoration: none;

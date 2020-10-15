@@ -18,7 +18,7 @@ function Start()  {
             <h1>Cerveza Colima</h1>
           </div> 
           <div className="button_start"> 
-          <Link className="btn btn-primary btn-lg" to="/home">
+            <Link className="btn btn-primary btn-lg" to="/home">
               Entrar
             </Link>
           </div> 

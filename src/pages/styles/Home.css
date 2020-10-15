@@ -8,6 +8,7 @@
 h3{
   color: black;
 }
+
 .button_start{
   display: flex;
   justify-content: center;
@@ -18,7 +19,6 @@ h3{
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 
 .button__start{
