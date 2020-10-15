@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import "./styles/Login.css";
 import Layout from "../components/Layout";
 import Axios from "axios";
-import './styles/Login.css';
-
 
 const Login = (props) => {
 
