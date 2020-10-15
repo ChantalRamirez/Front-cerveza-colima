@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import Layout from "../../components/Layout";
 import './styles/UsersList.css';
 
-
 const UserAdd = (props) => {
+
   const usr = JSON.parse(localStorage.getItem("user"))
+
   if(!usr){
     props.history.push("/login2");
   }

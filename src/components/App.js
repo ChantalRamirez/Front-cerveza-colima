@@ -20,7 +20,7 @@ import UserAdd from "../pages/users/UserAdd";
 import UserEdit from "../pages/users/UserEdit";
 
 //Login2
-import Login_2 from "../pages/LogIn_2";
+import Login_2 from "../pages/Login_2";
 
 
 function App() {

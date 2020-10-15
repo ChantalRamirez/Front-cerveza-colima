@@ -24,7 +24,7 @@ const CatalogoProductos = () => {
         <div className="Products__hero">
           <div className="Products__container">
             <h3>Catálogo de productos</h3>
-          </div> 
+          </div>
         </div>
         <div className="List__container">
           <div className="row">
