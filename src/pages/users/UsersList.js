@@ -108,7 +108,7 @@ const UsersList = (props) => {
     rObj['id'] = user.id;
     rObj['name'] = user.name;
     rObj['email'] = user.email;
-    rObj['update'] = <Link to={`/users/edit/${user.id}`}  className="btn-warning ">Update</Link> 
+    rObj['update'] = <Link to={`/users/edit/${user.id}`}  className="btn btn-primary ">Update</Link> 
     return rObj;
   });
 

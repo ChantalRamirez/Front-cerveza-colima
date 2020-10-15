@@ -12,6 +12,16 @@
     background-repeat: repeat;
     margin-bottom: 1rem;
   }
+
+  .boton__eliminar{
+    border-radius: 5px;
+    background-color: rgb(235, 93, 93);
+  }
+
+  .boton__editar{
+    border-radius: 5px;
+    background-color: rgb(219, 168, 27);
+  }
   
   h3{
     color: white;
@@ -25,14 +35,14 @@
   
   .Products__container {
     width: 100%;
-    max-width: 60%;
+    max-width: 80%;
     height: auto;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
   .Table__container{
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     padding: 0 1rem;
   }

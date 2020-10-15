@@ -27,7 +27,7 @@ const CatalogoProductos = () => {
           </div>
         </div>
         <div className="List__container">
-          <div className="row">
+          <div className="row center">
             {products.map((product) => (
             <Product key={product.id} product={product} />
             ))}

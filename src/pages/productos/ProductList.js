@@ -134,14 +134,14 @@ const ProductList = (props) => {
     rObj["price"] = product.price;
     rObj["image"] = product.image;
     rObj["update"] = (
-      <Link to={`/products/edit/${product.id}`} className="btn-warning ">
-        Update
+      <Link to={`/products/edit/${product.id}`} className="btn btn-primary boton__editar">
+        Modificar
       </Link>
     );
     rObj["delete"] = (
       <button
         type="button"
-        className="btn-danger"
+        className="btn btn-danger boton__eliminar"
         onClick={() => {
           handleOpen(product.id);
         }}
@@ -212,7 +212,7 @@ const ProductList = (props) => {
                   {/* <img className="img-fluid my-4" src={informacion.strDrinkThumb} /> */}
                   <button
                     type="button"
-                    className="btn-danger"
+                    className="btn-danger boton__eliminar"
                     onClick={() => {
                       handleClose(idProduct);
                     }}
